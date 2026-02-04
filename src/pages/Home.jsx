@@ -6,7 +6,6 @@ import Faq from '../components/Faq'
 import BlogCard from '../components/BlogCard'
 import Topbar from '../components/Topbar'
 import Navbar from '../components/Navbar'
-import TrustedBrands from '../components/TrustedBrands'
 
 const Home = () => {
   return (
@@ -16,7 +15,6 @@ const Home = () => {
       <Hero />
       <BlogCard />
       <About />
-      <TrustedBrands />
       <Faq />
       <Footer />
     </>
