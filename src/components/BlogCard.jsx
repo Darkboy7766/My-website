@@ -15,7 +15,7 @@ const BlogCard = () => {
                     
                 </div>
                 <div className="text-sm text-slate-600 max-w-lg">
-                    <h1 className="text-xl uppercase font-semibold text-slate-700">Аутогаз-Варна</h1>
+                    <h2 className="text-xl uppercase font-semibold text-slate-700">Аутогаз-Варна</h2>
                     <div className="w-24 h-0.75 rounded-full bg-linear-to-r from-indigo-600 to-[#DDD9FF]"></div>
                     <p className="mt-8">Добре дошли в нашия специализиран сервиз за автомобилни газови уредби! С дългогодишен опит и експертиза, ние предлагаме пълна гама от услуги за монтаж, поддръжка и ремонт на Автомобилни газови системи от водещи световни производители. </p>
                     <p className=' mt-2 font-bold'>Предлагаме специализирани решения за всеки тип двигател.</p>

@@ -37,7 +37,7 @@ const Faq = () => {
                     {faqsData.map((faq, index) => (
                         <div key={index} className='flex flex-col items-start w-full'>
                             <div className='flex items-center justify-between w-full cursor-pointer border border-indigo-100 p-4 rounded' onClick={() => setOpenIndex(openIndex === index ? null : index)}>
-                                <h2 className='text-sm'>{faq.question}</h2>
+                                <h3 className='text-sm'>{faq.question}</h3>
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${openIndex === index ? "rotate-180" : ""} transition-all duration-500 ease-in-out`}>
                                     <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#1D293D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
