@@ -8,7 +8,7 @@ const Topbar = () => {
 
     return (
        
-        <div className="hidden w-full md:flex py-2.5 px-1 font-medium text-xs text-white bg-gray-800" >
+        <div className="hidden w-full md:flex py-2.5 px-1 font-medium text-xs  bg-white/80 text-slate-800" >
         {/* Topbar left */}
         <div className="flex md:w-auto lg, xl:w-1/2 items-center justify-start ml-3 xl:ml-10">
             <Clock8 size={14} className="ml-2 lg:ml-5" />
