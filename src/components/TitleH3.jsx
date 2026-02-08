@@ -1,19 +1,20 @@
 import React from 'react'
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'motion/react'
 
-const Title = ({ title, subTitle }) => {
+const TitleH3 = ({ title, subTitle }) => {
   return (
-    <div className='text-center mb-10 overflow-hidden'>
+    <div className='text-center my-10 overflow-hidden'>
       {/* Основното заглавие - изплува отдолу нагоре */}
-      <motion.h2 
+      <motion.h3 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className='text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 mb-4'
+        className='text-2xl sm:text-3xl md:text-4xl text-slate-900 mb-4'
       >
         {title}
-      </motion.h2>
+      </motion.h3>
 
       {/* Декоративната линия - разпъва се от центъра настрани */}
       <motion.div 
@@ -40,4 +41,4 @@ const Title = ({ title, subTitle }) => {
   )
 }
 
-export default Title
+export default TitleH3

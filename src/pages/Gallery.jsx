@@ -3,7 +3,7 @@ import BrandCard from "../components/BrandCard";
 import Navbar from "../components/Navbar";
 import Promo from "../components/Promo";
 import Footer from "../components/Footer";
-import Title from "../components/Title";
+import TitleH3 from "../components/TitleH3";
 
 const Gallery = () => {
   // 2. Създаваме state за марките
@@ -28,7 +28,7 @@ const Gallery = () => {
     <div className="min-h-screen">
       <Navbar />
       <Promo />
-      <Title title="Галерия с монтажи на газови уредби" subTitle="" />
+      <TitleH3 title="Галерия с монтажи на газови уредби" subTitle="" />
       
       {/* Brands Grid */}
       <section className="container mx-auto px-4 pb-20">
