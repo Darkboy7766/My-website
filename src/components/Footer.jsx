@@ -1,24 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
-    const navLinks = [
-        { name: 'Начало', path: '/' },
-        { name: 'Цени', path: '/Services' },
-        { name: 'Галерия', path: '/Gallery' },
-        { name: 'Контакти', path: '/Contact' },
-    ];
-
   return (
-    <footer className="flex flex-col bg-slate-50 items-center justify-around w-full py-12 text-sm text-gray-800/70">
-                <div className="hidden md:flex items-center gap-4 lg:gap-8">
-                    {navLinks.map((link, i) => (
-                        <a key={i} href={link.path} >
-                            {link.name}
-                        </a>
-                    ))}
-                </div>
+    <footer className="flex flex-col bg-slate-50 items-center justify-around w-full py-10 text-sm text-gray-800/70">
+                
                 <div className="flex items-center gap-4 mt-8 text-indigo-500">
                     <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
