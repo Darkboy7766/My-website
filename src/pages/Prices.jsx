@@ -4,7 +4,7 @@ import PriceCard1 from '../components/PriceCard1'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
-const Services = () => {
+const Prices = () => {
   return (
     <div>
       <Navbar />
@@ -16,4 +16,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default Prices

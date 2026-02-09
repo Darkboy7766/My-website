@@ -15,8 +15,7 @@ const PriceCard1 = () => {
                           </div>
                           <p className="text-lg text-indigo-500  font-semibold ml-20">BRC</p>
                       </div>
-
-                  </div>
+                 </div>
                   <div className="flex flex-col items-center gap-3.5 w-full p-4 pb-2 rounded-b-lg bg-white border-t border-blue-500/20">
                       <div className="flex items-center w-full justify-between text-lg">
                           <p className='font-bold ml-5'>4 цил.</p>

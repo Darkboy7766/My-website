@@ -6,7 +6,7 @@ import { assets } from "../assets/assets";
 const Navbar = () => {
     const navLinks = [
         { name: 'Начало', path: '/' },
-        { name: 'Цени', path: '/Services' },
+        { name: 'Цени', path: '/Prices' },
         { name: 'Галерия', path: '/Gallery' },
         { name: 'Контакти', path: '/Contact' },
     ];
