@@ -6,11 +6,21 @@ import Contact from './pages/Contact';
 import BrandPage from './pages/BrandPage';
 import ModelGalleryPage from './pages/ModelGalleryPage';
 import Prices from './pages/Prices';
+import ScrollToTop from './components/ScrollToTop';
+import { ReactLenis, useLenis } from 'lenis/react';
 
 const App = () => {
+  // eslint-disable-next-line no-unused-vars
+  const lenis = useLenis((lenis) => {
+    // called every scroll
+    console.log(lenis)
+  })
 
   return (
+    
     <div>
+      <ReactLenis root />
+        <ScrollToTop />
       <div className='min-h-[70vh]'>
         <Routes>
           <Route path='/' element={<Home />}/>

@@ -14,7 +14,7 @@ const Hero = () => {
         initial={{ opacity: 0, x: -50 }} // Започва отляво и е прозрачно
         animate={{ opacity: 1, x: 0 }}    // Отива на мястото си
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className='relative z-10 bg-black/20 backdrop-blur-sm p-8 rounded-2xl border border-white/10 shadow-2xl'
+        className='relative z-10 bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-2xl'
       >
         {/* Анимиран бутон/линк */}
         <motion.a 
@@ -42,7 +42,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-start text-[40px] leading-tight md:text-6xl md:leading-[1.1] font-bold max-w-4xl drop-shadow-2xl"
+          className="text-start text-[40px] leading-tight md:text-6xl xs:text-4xl md:leading-[1.1] font-bold max-w-4xl drop-shadow-2xl"
         >
           Монтаж и сервиз на <br />
           <span className="text-indigo-400">автомобилни газови уредби.</span>
