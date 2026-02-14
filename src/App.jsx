@@ -27,7 +27,7 @@ const App = () => {
         <ScrollToTop />
       <div className='min-h-[70vh]'>
         {/* Ако пътят е '/', покажи Header, иначе покажи Navbar */}
-      {location.pathname === '/' ? <Header /> : <Navbar />}
+      {location.pathname === '/' ? <Header /> : <Header />}
         <main className={isHomePage ? "" : ""}>
           <Routes>
           <Route path='/' element={<Home />}/>
