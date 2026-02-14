@@ -15,8 +15,8 @@ const Navbar = () => {
     const location = useLocation(); // Следи къде се намираме в сайта
 
     return (
-        <div>
-            <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 z-50 bg-white/70 py-3 shadow-md">
+        <div className="fixed top-0 left-0 w-full">
+            <nav className=" flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 z-50 bg-white/70 py-3 shadow-md">
 
             {/* Logo */}
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
@@ -53,15 +53,15 @@ const Navbar = () => {
                             >
                                 {/* Горна линия */}
                                 <span className={`w-full h-1 rounded-full transition-all duration-300 origin-left 
-                                    ${isMenuOpen ? "rotate-45 bg-slate-950" :"bg-slate-950"}`} />
+                                    ${isMenuOpen ? "rotate-45 bg-slate-800" :"bg-slate-800"}`} />
                                 
                                 {/* Средна линия */}
                                 <span className={`w-full h-1 rounded-full transition-all duration-300 
-                                    ${isMenuOpen ? "opacity-0" : "bg-slate-950"}`} />
+                                    ${isMenuOpen ? "opacity-0" : "bg-slate-800"}`} />
                                 
                                 {/* Долна линия */}
                                 <span className={`w-full h-1 rounded-full transition-all duration-300 origin-left 
-                                    ${isMenuOpen ? "-rotate-45 bg-slate-950" : "bg-slate-950"}`} />
+                                    ${isMenuOpen ? "-rotate-45 bg-slate-800" : "bg-slate-800"}`} />
                             </button>
                         </div>
             
