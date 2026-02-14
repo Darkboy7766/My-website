@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"; // 1. Добавяме hooks
 import ImageGallery from "../components/ImageGallery";
 import { ArrowLeft, Camera } from "lucide-react";
 import Promo from "../components/Promo";
-import Navbar from "../components/Navbar";
 
 const ModelGalleryPage = () => {
   const { brandId, modelId } = useParams();
@@ -60,7 +59,6 @@ const ModelGalleryPage = () => {
     <div className="min-h-screen">
       {/* Мета таговете е добре да са в <Helmet> или друг SEO компонент, 
           но за целите на примера ги оставяме така, както бяха в твоя код */}
-      <Navbar />
       <Promo />
 
       <section className="relative py-12 md:py-20 overflow-hidden">

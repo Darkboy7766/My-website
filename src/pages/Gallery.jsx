@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"; // 1. Добавяме hooks
 import BrandCard from "../components/BrandCard";
-import Navbar from "../components/Navbar";
 import Promo from "../components/Promo";
 import Footer from "../components/Footer";
 import TitleH3 from "../components/TitleH3";
@@ -26,7 +25,6 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <Promo />
       <TitleH3 title="Галерия с монтажи на газови уредби" subTitle="" />
       

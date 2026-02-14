@@ -42,7 +42,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-start text-[40px] leading-tight md:text-6xl xs:text-4xl md:leading-[1.1] font-bold max-w-4xl drop-shadow-2xl"
+          className="text-start text-[40px] leading-tight md:text-6xl xs:text-3xl md:leading-[1.1] font-bold max-w-4xl drop-shadow-2xl"
         >
           Монтаж и сервиз на <br />
           <span className="text-indigo-400">автомобилни газови уредби.</span>

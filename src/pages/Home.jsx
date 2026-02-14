@@ -4,15 +4,13 @@ import Footer from '../components/Footer'
 import About from '../components/About'
 import Faq from '../components/Faq'
 import BlogCard from '../components/BlogCard'
-import Topbar from '../components/Topbar'
-import Navbar from '../components/Navbar'
 import Stats from '../components/Stats'
+import Header from '../components/Header'
 
 const Home = () => {
   return (
     <>
-      <Topbar />
-      <Navbar />
+    <Header />
       <Hero2 />
       <About />
       <Stats />

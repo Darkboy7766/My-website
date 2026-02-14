@@ -1,6 +1,8 @@
 import React from 'react'
-import { Route, Routes, } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import BrandPage from './pages/BrandPage';
@@ -10,6 +12,7 @@ import ScrollToTop from './components/ScrollToTop';
 import { ReactLenis, useLenis } from 'lenis/react';
 
 const App = () => {
+  const location = useLocation();
   // eslint-disable-next-line no-unused-vars
   const lenis = useLenis((lenis) => {
     // called every scroll
@@ -22,6 +25,8 @@ const App = () => {
       <ReactLenis root />
         <ScrollToTop />
       <div className='min-h-[70vh]'>
+        {/* Ако пътят е '/', покажи HeaderHome, иначе покажи HeaderInternal */}
+      {location.pathname === '/' ? <Header /> : <Navbar />}
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/Prices' element={<Prices />}/>

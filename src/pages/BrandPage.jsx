@@ -52,7 +52,6 @@ const BrandPage = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <Promo />
       
       {/* Brand Header */}
