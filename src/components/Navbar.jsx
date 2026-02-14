@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom"; // Добавихме useLocation
 import { assets } from "../assets/assets";
 
@@ -11,8 +11,37 @@ const Navbar = () => {
     ];
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     // eslint-disable-next-line no-unused-vars
     const location = useLocation(); // Следи къде се намираме в сайта
+
+    useEffect(() => {
+      const handleScroll = () => {
+        const isMobile = window.innerWidth < 768;
+    
+        // Ако сме на мобилно, винаги е "scrolled" (бял фон, фиксиран горе)
+        if (isMobile) {
+          setIsScrolled(true);
+          return;
+        }
+    
+        // Логика за десктоп
+        if (location.pathname !== '/') {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(window.scrollY > 10);
+        }
+      };
+    
+      handleScroll();
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleScroll);
+    
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleScroll);
+      };
+    }, [location.pathname]);
 
     return (
         <nav className="sticky top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 z-9999 bg-white/70 py-3 shadow-md">
