@@ -48,7 +48,7 @@ const Header = () => {
 
     return (
     <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
-        
+
        <div className={`hidden md:flex w-full px-1 font-medium text-xs bg-white text-slate-800 border-b border-gray-100 transition-all duration-300 ${isScrolled ? "h-0 py-0 opacity-0 overflow-hidden" : "h-10"}`} >
         {/* Topbar left */}
         <div className="flex md:w-auto lg, xl:w-1/2 items-center justify-start ml-3 xl:ml-10">
@@ -73,7 +73,6 @@ const Header = () => {
             ${isScrolled 
                 ? "bg-white/85 backdrop-blur-md py-3 shadow-md" 
         : "bg-transparent py-5 text-white"}`}> 
-           {/* -translate-y-[-36px] държи навигицията под топбара първоначално */}
 
             {/* Logo */}
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>

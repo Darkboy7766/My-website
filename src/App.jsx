@@ -25,7 +25,7 @@ const App = () => {
       <ReactLenis root />
         <ScrollToTop />
       <div className='min-h-[70vh]'>
-        {/* Ако пътят е '/', покажи HeaderHome, иначе покажи HeaderInternal */}
+        {/* Ако пътят е '/', покажи Header, иначе покажи Navbar */}
       {location.pathname === '/' ? <Header /> : <Navbar />}
         <Routes>
           <Route path='/' element={<Home />}/>

@@ -10,7 +10,7 @@ import Header from '../components/Header'
 const Home = () => {
   return (
     <>
-    <Header />
+      <Header />
       <Hero2 />
       <About />
       <Stats />

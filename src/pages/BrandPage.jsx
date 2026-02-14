@@ -2,7 +2,6 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react"; // 1. Добавяме hooks
 import ModelCard from "../components/ModelCard";
 import { ArrowLeft } from "lucide-react";
-import Navbar from "../components/Navbar";
 import Promo from "../components/Promo";
 
 const BrandPage = () => {
