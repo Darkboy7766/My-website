@@ -13,6 +13,7 @@ import { ReactLenis, useLenis } from 'lenis/react';
 
 const App = () => {
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
   // eslint-disable-next-line no-unused-vars
   const lenis = useLenis((lenis) => {
     // called every scroll
@@ -27,7 +28,8 @@ const App = () => {
       <div className='min-h-[70vh]'>
         {/* Ако пътят е '/', покажи Header, иначе покажи Navbar */}
       {location.pathname === '/' ? <Header /> : <Navbar />}
-        <Routes>
+        <main className={isHomePage ? "" : ""}>
+          <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/Prices' element={<Prices />}/>
           <Route path='/Gallery' element={<Gallery />}/>
@@ -35,6 +37,7 @@ const App = () => {
           <Route path='/brand/:brandId' element={<BrandPage />} />
           <Route path='/brand/:brandId/model/:modelId' element={<ModelGalleryPage />} />
         </Routes>
+        </main>
 
       </div>
     </div>
