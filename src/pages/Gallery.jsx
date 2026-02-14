@@ -24,7 +24,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <>
       <Promo />
       <TitleH3 title="Галерия с монтажи на газови уредби" subTitle="" />
       
@@ -41,7 +41,7 @@ const Gallery = () => {
         )}
       </section>
       <Footer />
-    </div>
+    </>
   );
 };
 
