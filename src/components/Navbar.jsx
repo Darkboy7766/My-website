@@ -15,7 +15,8 @@ const Navbar = () => {
     const location = useLocation(); // Следи къде се намираме в сайта
 
     return (
-        <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 z-50 bg-white/70 py-3 shadow-md">
+        <div>
+            <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 z-50 bg-white/70 py-3 shadow-md">
 
             {/* Logo */}
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
@@ -84,6 +85,7 @@ const Navbar = () => {
                             </button>
                         </div>
         </nav>
+        </div>
     );
 };
 
