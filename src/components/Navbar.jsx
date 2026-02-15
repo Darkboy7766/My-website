@@ -46,7 +46,7 @@ const Navbar = () => {
     return (
         <nav className={`w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-300 z-9999 
             ${isScrolled 
-                ? "sticky top-0 bg-white/70 backdrop-blur-md py-3 shadow-md" 
+                ? "fixed top-0 bg-white/70 backdrop-blur-md py-3 shadow-md" 
         : "bg-transparent py-5 text-white"}`}>
 
             {/* Logo */}

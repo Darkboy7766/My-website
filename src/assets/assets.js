@@ -1,5 +1,5 @@
 import logoLight from './autogas-logo-light-200.webp'
-import logoDark from './autogas-logo-dark-200.webp'
+import logoDark from './logo-dark-200.webp'
 import searchIcon from './searchIcon.svg'
 import userIcon from './userIcon.svg'
 import calenderIcon from './calenderIcon.svg'

@@ -17,11 +17,6 @@
 
 @import "tailwindcss";
 
-@theme{
-  --color-primary: #2563eb;
-  --color-secondary: #fbbf24;
-}
-
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -32,8 +27,5 @@ html, body {
   font-family: 'Montserrat' !important;
 }
 
-.font-raleway{
-  font-family: 'Montserrat' !important;
-}
 
 
