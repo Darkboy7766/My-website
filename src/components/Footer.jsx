@@ -1,9 +1,34 @@
 import React from 'react'
 import { motion } from 'motion/react'
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Twitter, Github, MapPin, Phone, Mail } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleFooterClick = (sectionId) => {
+    // 1. Ако вече сме на началната страница ('/')
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Изчисляваме позицията ръчно с отместване (offset) от 80px
+        const offset = 0;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: 'smooth'
+        });
+      }
+    } 
+    // 2. Ако сме на друга страница (например /Prices или /Gallery)
+    else {
+      // Пренасочваме към началото и предаваме ID-то като "състояние" (state)
+      navigate('/', { state: { scrollToId: sectionId } });
+    }
+  };
 
   return (
     <footer className="bg-slate-900 text-slate-300">
@@ -31,10 +56,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Навигация</h3>
             <ul className="space-y-4 text-sm">
-              <li><a href="#hero" className="hover:text-indigo-400 transition-colors">Начало</a></li>
-              <li><a href="#about" className="hover:text-indigo-400 transition-colors">За нас</a></li>
-              <li><a href="#services" className="hover:text-indigo-400 transition-colors">Услуги</a></li>
-              <li><a href="#faq" className="hover:text-indigo-400 transition-colors">Въпроси</a></li>
+              <li><a onClick={() => handleFooterClick('hero')} className="hover:text-indigo-400 transition-colors cursor-pointer">Начало</a></li>
+              <li><a onClick={() => handleFooterClick('about')} className="hover:text-indigo-400 transition-colors cursor-pointer">За нас</a></li>
+              <li><a onClick={() => handleFooterClick('services')} className="hover:text-indigo-400 transition-colors cursor-pointer">Услуги</a></li>
+              <li><a onClick={() => handleFooterClick('faq')} className="hover:text-indigo-400 transition-colors cursor-pointer">Въпроси</a></li>
             </ul>
           </div>
 

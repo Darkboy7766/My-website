@@ -72,9 +72,14 @@ const Location = () => {
           ))}
         </div>
 
-        <div id="contact-form-section" className="w-full max-w-4xl mt-12 mx-auto px-4"> 
-          <ContactForm />
-        </div>
+          <div className="relative">
+            {/* Невидим елемент за скрол с отместване */}
+            <div id="contact-form-section" className="absolute -top-24"></div>
+            
+            <div className="w-full max-w-4xl mt-12 mx-auto px-4"> 
+              <ContactForm />
+            </div>
+          </div>
 
         {/* Секция с картата */}
         <motion.div 
