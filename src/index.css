@@ -22,6 +22,14 @@ html, body {
   position: relative;
   scroll-behavior: smooth;
 }
+/* Гарантираме, че fixed елементите няма да изчезнат заради Lenis */
+.lenis.lenis-smooth {
+  height: auto;
+}
+
+html.lenis {
+  height: auto;
+}
 
 *{
   font-family: 'Montserrat' !important;
