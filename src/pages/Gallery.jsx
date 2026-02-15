@@ -25,8 +25,6 @@ const Gallery = () => {
 
   return (
     <>
-    {/* Този div ще заеме мястото под Navbar-а без да влияе на неговото позициониране */}
-      <div className="h-17.5 md:h-27.5"></div>
       <Promo />
       <TitleH3 title="Галерия с монтажи на газови уредби" subTitle="" />
       
