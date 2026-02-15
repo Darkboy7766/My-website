@@ -138,7 +138,7 @@ const Navbar = () => {
             </div>
     
             {/* Mobile Menu Overlay */}
-            <div className={`fixed inset-0 w-full h-screen bg-white text-slate-950 flex flex-col items-center justify-center gap-8 font-bold text-2xl transition-all duration-500 z-60 
+            <div className={`fixed inset-0 w-full h-screen bg-white text-slate-950 flex flex-col items-center justify-center gap-8 font-bold text-2xl transition-all duration-500 z-60 active:scale-95 
                 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}>
                 
                 {navLinks.map((link, i) => (
