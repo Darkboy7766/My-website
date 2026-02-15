@@ -6,7 +6,10 @@ import Footer from '../components/Footer'
 const Contact = () => {
   return (
     <div>
-      <Promo />
+      <Promo 
+        title="Запазете Час" 
+        subTitle="Намерете ни във Варна или се свържете с нас за безплатна консултация още днес." 
+      />
       <Location />
       <Footer />
       

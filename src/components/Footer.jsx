@@ -1,41 +1,92 @@
 import React from 'react'
+import { motion } from 'motion/react'
+import { Facebook, Instagram, Linkedin, Twitter, Github, MapPin, Phone, Mail } from 'lucide-react'
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex flex-col bg-slate-50 items-center justify-around w-full py-10 text-sm text-gray-800/70">
-                
-                <div className="flex items-center gap-4 mt-8 text-indigo-500">
-                    <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </a>
-                    <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M16 11.37a4 4 0 1 1-7.914 1.173A4 4 0 0 1 16 11.37m1.5-4.87h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </a>
-                    <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6M6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </a>
-                    <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </a>
-                    <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M9 18c-4.51 2-5-2-7-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </a>
-                </div>
-                <p className="mt-8 text-center">© 2025 . <a href="#">Аутогаз-Варна</a></p>
-            </footer>
+    <footer className="bg-slate-900 text-slate-300">
+      {/* Основна секция на футъра */}
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          
+          {/* Колона 1: Лого и Описание */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-black text-white tracking-tighter">
+              АУТОГАЗ<span className="text-indigo-500">-ВАРНА</span>
+            </h2>
+            <p className="text-sm leading-relaxed text-slate-400">
+              Професионален монтаж и сервиз на автомобилни газови уредби с над 20 години опит. Гарантирано качество и икономия за Вашия автомобил.
+            </p>
+            <div className="flex items-center gap-4 text-indigo-400">
+              <a href="#" className="hover:text-white hover:-translate-y-1 transition-all duration-300"><Facebook size={20} /></a>
+              <a href="#" className="hover:text-white hover:-translate-y-1 transition-all duration-300"><Instagram size={20} /></a>
+              <a href="#" className="hover:text-white hover:-translate-y-1 transition-all duration-300"><Linkedin size={20} /></a>
+              <a href="#" className="hover:text-white hover:-translate-y-1 transition-all duration-300"><Twitter size={20} /></a>
+            </div>
+          </div>
+
+          {/* Колона 2: Бързи връзки */}
+          <div>
+            <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Навигация</h3>
+            <ul className="space-y-4 text-sm">
+              <li><a href="#hero" className="hover:text-indigo-400 transition-colors">Начало</a></li>
+              <li><a href="#about" className="hover:text-indigo-400 transition-colors">За нас</a></li>
+              <li><a href="#services" className="hover:text-indigo-400 transition-colors">Услуги</a></li>
+              <li><a href="#faq" className="hover:text-indigo-400 transition-colors">Въпроси</a></li>
+            </ul>
+          </div>
+
+          {/* Колона 3: Контакти */}
+          <div>
+            <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Контакти</h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="text-indigo-500 shrink-0" />
+                <span>гр. Варна, Западна промишлена зона</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={18} className="text-indigo-500 shrink-0" />
+                <span>+359 888 123 456</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={18} className="text-indigo-500 shrink-0" />
+                <span>office@autogas-varna.com</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Колона 4: Работно време */}
+          <div>
+            <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Работно време</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex justify-between border-b border-slate-800 pb-2">
+                <span>Пон - Пет:</span>
+                <span className="text-white font-medium">09:00 - 18:00</span>
+              </li>
+              <li className="flex justify-between border-b border-slate-800 pb-2">
+                <span>Събота:</span>
+                <span className="text-white font-medium">10:00 - 14:00</span>
+              </li>
+              <li className="flex justify-between text-indigo-400">
+                <span>Неделя:</span>
+                <span>Почивен ден</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Долна линия и Copyright */}
+        <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 italic">
+          <p>© {currentYear} Аутогаз-Варна. Всички права запазени.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Политика за поверителност</a>
+            <a href="#" className="hover:text-white transition-colors">Общи условия</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   )
 }
 

@@ -5,14 +5,13 @@
   "type": "module",
   "scripts": {
     "generate-cars-new": "node generate-cars-new.js",
-    "update-new-cars": "node generate-new-cars.js",
-    "update-cars": "node generate-cars.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@tailwindcss/vite": "^4.1.18",
     "axios": "^1.13.4",

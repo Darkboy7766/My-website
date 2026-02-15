@@ -1,25 +1,31 @@
 import React, { useState } from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react";
 import Title from "./Title";
-import { ChevronDown } from "lucide-react"; // Можеш да ползваш и обикновено изображение/svg
+import { ChevronDown, HelpCircle } from "lucide-react";
 
 const FAQItem = ({ question, answer, isOpen, toggleOpen }) => {
   return (
-    <div className="border-b border-gray-200">
+    <div 
+      className={`mb-4 rounded-2xl transition-all duration-300 border ${
+        isOpen ? "bg-white border-indigo-100 shadow-md" : "bg-slate-50 border-transparent"
+      }`}
+    >
       <button
         onClick={toggleOpen}
-        className="w-full py-6 flex justify-between items-center text-left focus:outline-none"
+        className="w-full py-6 px-6 flex justify-between items-center text-left focus:outline-none group"
       >
-        <span className="text-lg font-medium text-slate-900 md:text-xl">
-          {question}
-        </span>
+        <div className="flex items-center gap-4">
+          <HelpCircle className={`w-5 h-5 ${isOpen ? "text-indigo-600" : "text-slate-400"} transition-colors`} />
+          <span className={`text-lg font-bold ${isOpen ? "text-indigo-600" : "text-slate-800"} md:text-xl transition-colors tracking-tight`}>
+            {question}
+          </span>
+        </div>
         <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
+          animate={{ rotate: isOpen ? 180 : 0, scale: isOpen ? 1.1 : 1 }}
           transition={{ duration: 0.3 }}
-          className="text-indigo-600 ml-4"
+          className={`${isOpen ? "text-indigo-600" : "text-slate-400"} ml-4`}
         >
-          <ChevronDown size={24} />
+          <ChevronDown size={24} strokeWidth={3} />
         </motion.div>
       </button>
 
@@ -32,9 +38,12 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen }) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-slate-600 leading-relaxed">
-              {answer}
-            </p>
+            <div className="px-6 pb-6 pt-2 ml-9">
+              <div className="w-full h-px bg-slate-100 mb-6"></div>
+              <p className="text-slate-600 leading-relaxed text-base md:text-lg">
+                {answer}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -47,38 +56,40 @@ const FAQ = () => {
 
   const faqs = [
     {
-            question: 'Безопасна ли е газовата уредба?',
-            answer: 'Газовите уредби са изключително безопасни при спазване на стандартите за монтаж и обслужване. Съвременните системи разполагат с множество предпазни механизми: автоматични клапани при удар, предпазни вентили при превишаване на налягането, защита от изтичане. Резервоарът за газ е многократно по-здрав от обикновения горивен резервоар и издържа на значително по-високо налягане. Статистиката показва, че инцидентите с газовите уредби са изключително редки и се дължат основно на непрофесионален монтаж или липса на редовна поддръжка. При нас всеки монтаж се извършва според европейските стандарти ECE R67/R115.'
-        },
-        {
-            question: 'Колко струва монтажът на газова уредба и за колко време се изплаща?',
-            answer: 'Цената на монтажа варира между 750 и 2,500 eвро. Всички цени са зависимост от типа двигател и избраната система. За двигатели с директно впръскване цената е по-висока поради по-сложната технология. При средна цена на газта от 0.55-0.60 евро/литър и бензин около 1.30 евро/литър, икономиите са около 50%. При изминаване на 10,000 км годишно и разход от 8л/100км, инвестицията се възвръща за около 12 месеца. Колкото повече километри изминавате, толкова по-бързо ще се изплати системата.'
-        },
-        {
-            question: 'Губи ли се мощност на двигателя след монтаж на АГУ?',
-            answer: 'При правилно монтирана и настроена система загубата на мощност е минимална - между 3% и 5%, което на практика е незабележимо при ежедневното каране. Съвременните системи от BRC, Prins и AEB са проектирани да запазват оригиналните характеристики на двигателя. При двигатели с директно впръскване загубата е още по-малка благодарение на усъвършенстваната технология. Важно е системата да бъде калибрирана от сертифициран специалист, за да се постигнат оптимални показатели.'
-        },
-        {
-            question: 'Мога ли да монтирам газова уредба на автомобил с директно впръскване?',
-            answer: 'Да, абсолютно! Съвременните автомобилни газови системи 5-то и 6-то поколение (каквито предлагаме от BRC, Prins и AEB) са специално проектирани за турбо двигатели с директно впръскване (TSI, FSI, GDI, TFSI). При двигателите с директно впръскване се използва специална технология, при която се гарантира пълна защита на двигателя и запазване на всички негови характеристики. Притежаваме необходимото оборудване и опит за монтаж на най-съвременните двигателни технологии.'
-        },
-        {
-            question: 'Какви са изискванията за поддръжка на газовата уредба и колко често трябва да се прави?',
-            answer: 'Газовата уредба изисква минимална поддръжка в сравнение с ползваните икономии. Препоръчва се на всеки 10 000-15 000 км или веднъж годишно смяна на филтрите (газова и течна фаза), проверка на херметичността на системата, диагностика на електрониката.Газовият резервоар има законов срок на годност - 10 години от датата на производството. Редовната поддръжка гарантира дълъг живот на системата и икономична експлоатация. Всички услуги по поддръжка предлагаме в нашия сервиз на достъпни цени.'
-
-
-        },
+      question: 'Безопасна ли е газовата уредба?',
+      answer: 'Газовите уредби са изключително безопасни при спазване на стандартите за монтаж. Съвременните системи разполагат с автоматични клапани при удар и защита от изтичане. Резервоарът е многократно по-здрав от обикновения горивен резервоар. При нас всеки монтаж се извършва според европейските стандарти ECE R67/R115.'
+    },
+    {
+      question: 'Колко струва монтажът и за колко се изплаща?',
+      answer: 'Инвестицията обикновено се възвръща за около 12 месеца при средно шофиране. При цена на газта около 50-60% по-ниска от тази на бензина, спестяванията започват веднага след първото зареждане.'
+    },
+    {
+      question: 'Губи ли се мощност на двигателя?',
+      answer: 'При правилна настройка загубата е между 3% и 5%, което е незабележимо. Системите от BRC и Prins са проектирани да запазват оригиналната динамика на вашия автомобил.'
+    },
+    {
+      question: 'Мога ли да монтирам АГУ на двигател с директно впръскване?',
+      answer: 'Да! Специализираните системи 5-то и 6-то поколение за TSI, GDI и FSI двигатели гарантират пълна защита и ефективност. Притежаваме пълното техническо оборудване за такъв монтаж.'
+    },
+    {
+      question: 'Каква е поддръжката?',
+      answer: 'На всеки 10 000 - 15 000 км се препоръчва смяна на филтри и диагностика. Това гарантира дълъг живот на системата и оптимален разход. Ние предлагаме пълно сервизно обслужване.'
+    },
   ];
 
   return (
-    <section className="py-10 bg-gray-50 px-5">
-      <div className="max-w-6xl mx-auto">
-        <Title title="Често задавани въпроси" subTitle="Информация свързана с автомобилните газови уредби." />
+    <section className="py-24 bg-white px-5 relative">
+      <div className="max-w-4xl mx-auto relative z-10">
+        <Title 
+          title="Въпроси и Отговори" 
+          subTitle="Всичко, което трябва да знаете за преминаването на алтернативно гориво." 
+        />
+        
         <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded p-6 md:p-10 shadow-sm border border-gray-100"
+          className="mt-12"
         >
           {faqs.map((faq, index) => (
             <FAQItem
@@ -90,7 +101,23 @@ const FAQ = () => {
             />
           ))}
         </motion.div>
+
+        {/* Допълнителен CTA блок */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="mt-16 p-8 rounded-4xl bg-indigo-600 text-center text-white shadow-xl shadow-indigo-200"
+        >
+          <h3 className="text-xl font-bold mb-2">Имате друг въпрос?</h3>
+          <p className="text-indigo-100 mb-6 text-sm">Нашите експерти са на Ваше разположение за безплатна консултация.</p>
+          <a href="/Contact" className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-indigo-50 transition-colors">
+            Свържи се с нас
+          </a>
+        </motion.div>
       </div>
+
+      {/* Фон декор */}
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-50 rounded-full blur-3xl -z-10 opacity-60"></div>
     </section>
   );
 };

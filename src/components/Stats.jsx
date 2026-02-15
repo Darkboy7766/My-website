@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion, useMotionValue, useSpring, useInView } from "motion/react";
 
 const Counter = ({ value, title, suffix = "+" }) => {

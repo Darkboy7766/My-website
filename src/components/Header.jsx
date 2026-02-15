@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom"; // Добавихме useLocation
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Добавихме useLocation
 import { assets } from "../assets/assets";
 import { Mail } from 'lucide-react';
 import { Clock8 } from 'lucide-react';
 import { Phone } from 'lucide-react';
 import { Smartphone } from 'lucide-react';
+import { motion } from "motion/react";
 
 const Header = () => {
     const navLinks = [
@@ -17,6 +18,30 @@ const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation(); // Следи къде се намираме в сайта
+    const navigate = useNavigate(); // За пренасочване
+
+     // Функция за скролване или навигация
+    const handleActionClick = () => {
+        setIsMenuOpen(false); // Затваря мобилното меню ако е отворено
+
+        if (location.pathname === '/Contact') {
+            // Ако сме на страницата, само скролваме
+            const contactSection = document.getElementById('contact-form-section');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // Ако сме другаде, отиваме на Контакти с "anchor"
+            navigate('/Contact');
+            // Малък timeout, за да изчакаме зареждането на страницата преди скрола
+            setTimeout(() => {
+                const contactSection = document.getElementById('contact-form-section');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+    };
 
     useEffect(() => {
   const handleScroll = () => {
@@ -45,6 +70,20 @@ const Header = () => {
     window.removeEventListener("resize", handleScroll);
   };
 }, [location.pathname]);
+
+const pulseVariants = {
+        active: {
+            scale: [1, 1.03, 1],
+            transition: {
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+            }
+        },
+        stop: {
+            scale: 1
+        }
+        };
 
     return (
     <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
@@ -95,10 +134,20 @@ const Header = () => {
                         <div className={`${isScrolled ? "bg-slate-800" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
                     </Link>
                 ))}
-                <button className={`border px-6 py-2 text-sm font-bold rounded-full cursor-pointer transition-all 
-                    ${isScrolled ? 'border-[#cd2122] text-[#cd2122] hover:bg-[#cd2122] hover:text-white' : 'border-white text-white hover:bg-white hover:text-black'}`}>
+                {/* Desktop Button */}
+                <motion.button 
+                    onClick={handleActionClick}
+                    variants={pulseVariants}
+                    animate={isScrolled ? "active" : "stop"}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`border px-6 py-2 text-sm font-bold rounded-full cursor-pointer transition-all 
+                    ${isScrolled 
+                        ? "border-[#cd2122] text-[#cd2122] shadow-lg shadow-red-500/10" 
+                        : "border-white text-white hover:bg-white hover:text-slate-900"}`}
+                >
                     ЗАПАЗИ ЧАС
-                </button>
+                </motion.button>
             </div>
 
             {/* Mobile Menu Button (Animated) */}
@@ -135,10 +184,16 @@ const Header = () => {
                         {link.name}
                     </Link>
                 ))}
-                
-                <button className="bg-[#cd2122] text-white px-10 py-2 rounded-full mt-4 shadow-lg active:scale-95 transition-transform">
-                    ЗАПАЗИ ЧАС
-                </button>
+                {/* Mobile Button */}
+                <motion.button 
+                                    onClick={handleActionClick}
+                                    variants={pulseVariants}
+                                    animate="active" // Винаги пулсира в мобилното меню
+                                    whileTap={{ scale: 0.9 }}
+                                    className="bg-[#cd2122] text-white px-10 py-4 rounded-full mt-4 shadow-xl shadow-red-500/30 font-black tracking-widest text-sm"
+                                >
+                                    ЗАПАЗИ ЧАС
+                                </motion.button>
             </div>
         </nav>
     </header>

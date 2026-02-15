@@ -1,16 +1,33 @@
 import React from 'react'
+import { motion } from 'motion/react'
 
-const Promo = () => {
+const Promo = ({ title, subTitle }) => {
   return (
-    <div>
-      <section className="flex flex-col items-center justify-center mx-auto max-md:mx-2 max-md:px-2 w-full text-center py-20 md:py-24 bg-[url('/src/assets/09copy.webp')] bg-cover bg-center bg-no-repeat">
-                <h1 className="text-2xl md:text-3xl font-medium text-white max-w-2xl">Карай повече. Плащай по-малко.</h1>
-                <div className="h-0.75 w-32 my-1 bg-linear-to-l from-transparent to-white"></div>
-                <p className="text-sm md:text-base text-gray-100 max-w-xl">
-                    50% икономия. 100% качество. 0% компромиси.
-                </p>
-                
-            </section>
+    <div className="relative overflow-hidden">
+      {/* Секция с фоново изображение и Overlay */}
+      <section className="relative flex flex-col items-center justify-center mx-auto w-full text-center py-24 md:py-32 bg-[url('/src/assets/09copy.webp')] bg-cover bg-center bg-no-repeat">
+        
+        {/* Тъмен слой за по-добър контраст */}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+
+        {/* Съдържание с анимация */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 px-6"
+        >
+          <h1 className="text-3xl md:text-5xl font-black text-white max-w-4xl tracking-tighter uppercase">
+            {title}
+          </h1>
+          
+          <div className="h-1 w-24 mx-auto my-6 bg-indigo-500 rounded-full"></div>
+          
+          <p className="text-lg md:text-xl text-slate-100 max-w-2xl font-medium">
+            {subTitle}
+          </p>
+        </motion.div>
+      </section>
     </div>
   )
 }
