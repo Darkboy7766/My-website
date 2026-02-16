@@ -128,14 +128,14 @@ const pulseVariants = {
               ? 'text-slate-900 group-hover:text-red-600' 
               : 'text-white group-hover:text-red-500'
         }`}>
-            AUTOGAZ
+            АУТОГАЗ
         </span>
         
         {/* "VARNA" частта */}
         <span className={`text-xl lg:text-2xl font-light tracking-widest transition-all duration-300 ${
             isScrolled ? 'text-red-600 group-hover:text-slate-900' : 'text-red-500 group-hover:text-white'
         }`}>
-            VARNA
+            ВАРНА
         </span>
     </div>
 
