@@ -51,7 +51,7 @@ const Footer = () => {
               </div>
               
               {/* Линия и подзаглавие */}
-              <div className="h-[2px] w-0 group-hover:w-full bg-white transition-all duration-300 mb-1"></div>
+              <div className="h-0.5 w-0 group-hover:w-full bg-white transition-all duration-300 mb-1"></div>
               <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-slate-400 group-hover:text-white transition-colors">
                 Professional Gas Systems
               </span>

@@ -97,7 +97,7 @@ const Navbar = () => {
                 </div>
                 
                 {/* Подзаглавие / Слоган (опционално) */}
-                <div className="h-[2px] w-0 group-hover:w-full bg-red-600 transition-all duration-300"></div>
+                <div className="h-0.5 w-0 group-hover:w-full bg-red-600 transition-all duration-300"></div>
                 <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-slate-500">
                     Professional Gas Systems
                 </span>
