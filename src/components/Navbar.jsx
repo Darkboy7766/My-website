@@ -85,12 +85,22 @@ const Navbar = () => {
                 : "bg-transparent py-5 text-white"}`}>
 
             {/* Logo */}
-            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-                <img 
-                    src={assets.logoLight}
-                    alt="Logo" 
-                    className="h-6 lg:h-7" 
-                />
+            <Link to="/" className="flex flex-col items-start group no-underline">
+                {/* Основна част на логото */}
+                <div className="flex items-center space-x-1">
+                    <span className="text-2xl font-black tracking-tighter text-slate-900 transition-colors group-hover:text-red-600">
+                    АУТОГАЗ
+                    </span>
+                    <span className="text-2xl font-light tracking-widest text-red-600">
+                    ВАРНА
+                    </span>
+                </div>
+                
+                {/* Подзаглавие / Слоган (опционално) */}
+                <div className="h-[2px] w-0 group-hover:w-full bg-red-600 transition-all duration-300"></div>
+                <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-slate-500">
+                    Professional Gas Systems
+                </span>
             </Link>
 
             {/* Desktop Nav */}

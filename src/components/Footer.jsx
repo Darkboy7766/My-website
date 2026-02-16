@@ -38,9 +38,25 @@ const Footer = () => {
           
           {/* Колона 1: Лого и Описание */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-black text-white tracking-tighter">
-              АУТОГАЗ<span className="text-indigo-500">-ВАРНА</span>
-            </h2>
+            <div className="flex flex-col items-start group no-underline">
+              <div className="flex flex-col items-start group no-underline">
+              {/* Основна част на логото */}
+              <div className="flex items-center space-x-1">
+                <span className="text-2xl font-black tracking-tighter text-white transition-colors group-hover:text-red-500 drop-shadow-[0_2px_2px_rgba(255,255,255,0.1)]">
+                  АУТОГАЗ
+                </span>
+                <span className="text-2xl font-light tracking-widest text-red-500">
+                  ВАРНА
+                </span>
+              </div>
+              
+              {/* Линия и подзаглавие */}
+              <div className="h-[2px] w-0 group-hover:w-full bg-white transition-all duration-300 mb-1"></div>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-slate-400 group-hover:text-white transition-colors">
+                Professional Gas Systems
+              </span>
+            </div>
+            </div>
             <p className="text-sm leading-relaxed text-slate-400">
               Професионален монтаж и сервиз на автомобилни газови уредби с над 20 години опит. Гарантирано качество и икономия за Вашия автомобил.
             </p>
@@ -69,15 +85,19 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-indigo-500 shrink-0" />
-                <span>гр. Варна, Западна промишлена зона</span>
+                <span>гр. Варна, бул."Хр.Смирненски"</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-indigo-500 shrink-0" />
-                <span>+359 888 123 456</span>
+                <span>0879 00 50 51</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={18} className="text-indigo-500 shrink-0" />
+                <span>0887 67 59 81</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-indigo-500 shrink-0" />
-                <span>office@autogas-varna.com</span>
+                <span>info@autogas-varna.com</span>
               </li>
             </ul>
           </div>
@@ -88,13 +108,13 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex justify-between border-b border-slate-800 pb-2">
                 <span>Пон - Пет:</span>
-                <span className="text-white font-medium">09:00 - 18:00</span>
+                <span className="text-white font-medium">08:00 - 17:00</span>
               </li>
-              <li className="flex justify-between border-b border-slate-800 pb-2">
+              <li className="flex justify-between text-indigo-400 border-b border-slate-800 pb-2">
                 <span>Събота:</span>
-                <span className="text-white font-medium">10:00 - 14:00</span>
+                <span>Почивен ден</span>
               </li>
-              <li className="flex justify-between text-indigo-400">
+              <li className="flex justify-between text-indigo-400 border-b border-slate-800 pb-2">
                 <span>Неделя:</span>
                 <span>Почивен ден</span>
               </li>

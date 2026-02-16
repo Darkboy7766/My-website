@@ -5,8 +5,9 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import BrandPage from './pages/BrandPage';
+import ModelGalleryPage from './pages/ModelGalleryPage';
 import Prices from './pages/Prices';
-import ScrollToTop from './components/ScrollToTop';
 import { ReactLenis, useLenis } from 'lenis/react';
 
 const App = () => {
@@ -76,10 +77,17 @@ const App = () => {
         {location.pathname === '/' ? <Header /> : <Navbar />}
         <main>
           <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/Prices' element={<Prices />}/>
-            <Route path='/Gallery' element={<Gallery />}/>
-            <Route path='/Contact' element={<Contact />}/>
+             <Route path='/' element={<Home />}/>
+
+          <Route path='/Prices' element={<Prices />}/>
+
+          <Route path='/Gallery' element={<Gallery />}/>
+
+          <Route path='/Contact' element={<Contact />}/>
+
+          <Route path='/brand/:brandId' element={<BrandPage />} />
+
+          <Route path='/brand/:brandId/model/:modelId' element={<ModelGalleryPage />} />
           </Routes>
         </main>
       </div>

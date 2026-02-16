@@ -91,17 +91,17 @@ const Location = () => {
         >
           <iframe 
             title="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.653456789!2d27.9000!3d43.2100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEyJzM2LjAiTiAyN8KwNTQnMDAuMCJF!5e0!3m2!1sbg!2sbg!4v1234567890" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5814.331110678638!2d27.900785262229718!3d43.22698846739555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a44c2d481a0a79%3A0x5d40fca96735882c!2z0JDRg9GC0L7Qs9Cw0Lct0JLQsNGA0L3QsCDQntCe0JQ!5e0!3m2!1sbg!2sbg!4v1771263300808!5m2!1sbg!2sbg" 
             className='w-full h-125 grayscale hover:grayscale-0 transition-all duration-1000 border-none'
             allowFullScreen=""
             loading="lazy"
           ></iframe>
           
           {/* Инфо кутия върху картата (Desktop само) */}
-          <div className="absolute top-10 left-10 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-white/20 hidden lg:block max-w-xs">
+          <div className="absolute top-1 left-1 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-white/20 hidden lg:block max-w-xs">
             <p className="text-indigo-600 font-black text-sm uppercase tracking-widest mb-2">Работно Време</p>
-            <p className="text-slate-800 font-bold">Пон - Пет: 09:00 - 18:00</p>
-            <p className="text-slate-500 text-sm mt-2 font-medium italic">Заповядайте на място за безплатна диагностика на Вашата газова система!</p>
+            <p className="text-slate-800 font-bold">Пон - Пет: 08:00 - 17:00</p>
+            <p className="text-slate-500 text-sm mt-2 font-medium italic">Заповядайте на място за безплатна консултация за Вашата газова система!</p>
           </div>
         </motion.div>
       </div>

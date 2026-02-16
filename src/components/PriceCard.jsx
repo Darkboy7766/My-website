@@ -69,15 +69,15 @@ const PriceTable = ({ brand, logo, prices, delay }) => {
 
 const PriceCard = () => {
   const mpiData = [
-    { brand: 'BRC', logo: assets.brc_logo, prices: [{cyl: 4, priceEuro: 1900}, {cyl: 6, priceEuro: 2400}, {cyl: 8, priceEuro: 2900}] },
-    { brand: 'PRINS', logo: assets.prins_logo_90, prices: [{cyl: 4, priceEuro: 2100}, {cyl: 6, priceEuro: 2800}, {cyl: 8, priceEuro: 3400}] },
-    { brand: 'AEB', logo: assets.aeb_logo_90, prices: [{cyl: 4, priceEuro: 1400}, {cyl: 6, priceEuro: 1900}, {cyl: 8, priceEuro: 2400}] },
+    { brand: 'BRC', logo: assets.brc_logo, prices: [{cyl: 4, priceEuro: 971}, {cyl: 6, priceEuro: 1533}, {cyl: 8, priceEuro: 1942}] },
+    { brand: 'PRINS', logo: assets.prins_logo_90, prices: [{cyl: 4, priceEuro: 1329}, {cyl: 6, priceEuro: 1942}, {cyl: 8, priceEuro: 2454}] },
+    { brand: 'AEB', logo: assets.aeb_logo_90, prices: [{cyl: 4, priceEuro: 715}, {cyl: 6, priceEuro: 1278}, {cyl: 8, priceEuro: 1636}] },
   ];
 
   const diData = [
-    { brand: 'BRC', logo: assets.brc_logo, prices: [{cyl: 4, priceEuro: 2300}, {cyl: 6, priceEuro: 2900}, {cyl: 8, priceEuro: 3600}] },
-    { brand: 'PRINS', logo: assets.prins_logo_90, prices: [{cyl: 4, priceEuro: 2600}, {cyl: 6, priceEuro: 3200}, {cyl: 8, priceEuro: 3900}] },
-    { brand: 'AEB', logo: assets.aeb_logo_90, prices: [{cyl: 4, priceEuro: 1800}, {cyl: 6, priceEuro: 2400}, {cyl: 8, priceEuro: 2900}] },
+    { brand: 'BRC', logo: assets.brc_logo, prices: [{cyl: 4, priceEuro: 1799}, {cyl: 6, priceEuro: 2326}, {cyl: 8, priceEuro: 0}] },
+    { brand: 'PRINS', logo: assets.prins_logo_90, prices: [{cyl: 4, priceEuro: 1968}, {cyl: 6, priceEuro: 2428}, {cyl: 8, priceEuro: 3042}] },
+    { brand: 'AEB', logo: assets.aeb_logo_90, prices: [{cyl: 4, priceEuro: 1431}, {cyl: 6, priceEuro: 0}, {cyl: 8, priceEuro: 0}] },
   ];
 
   return (
