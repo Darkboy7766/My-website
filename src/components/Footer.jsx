@@ -45,7 +45,7 @@ const Footer = () => {
                 <span className="text-2xl font-black tracking-tighter text-white transition-colors group-hover:text-red-500 drop-shadow-[0_2px_2px_rgba(255,255,255,0.1)]">
                   АУТОГАЗ
                 </span>
-                <span className="text-2xl font-light tracking-widest text-red-500">
+                <span className="text-2xl font-light tracking-widest text-red-500 group-hover:text-slate-400">
                   ВАРНА
                 </span>
               </div>

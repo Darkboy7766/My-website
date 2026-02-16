@@ -114,43 +114,41 @@ const pulseVariants = {
         : "bg-transparent py-5 text-white"}`}> 
 
             {/* Logo */}
-            {/* Logo */}
-{/* Logo */}
-<Link 
-  to="/" 
-  onClick={() => window.scrollTo(0, 0)} 
-  className="flex flex-col items-start group no-underline outline-none"
->
-    <div className="flex items-center space-x-1">
-        {/* "AUTOGAZ" частта */}
-        <span className={`text-xl lg:text-2xl font-black tracking-tighter transition-all duration-300 ${
-            isScrolled 
-              ? 'text-slate-900 group-hover:text-red-600' 
-              : 'text-white group-hover:text-red-500'
-        }`}>
-            АУТОГАЗ
-        </span>
-        
-        {/* "VARNA" частта */}
-        <span className={`text-xl lg:text-2xl font-light tracking-widest transition-all duration-300 ${
-            isScrolled ? 'text-red-600 group-hover:text-slate-900' : 'text-red-500 group-hover:text-white'
-        }`}>
-            ВАРНА
-        </span>
-    </div>
+            <Link 
+            to="/" 
+            onClick={() => window.scrollTo(0, 0)} 
+            className="flex flex-col items-start group no-underline outline-none"
+            >
+                <div className="flex items-center space-x-1">
+                    {/* "AUTOGAZ" частта */}
+                    <span className={`text-xl lg:text-2xl font-black tracking-tighter transition-all duration-300 ${
+                        isScrolled 
+                        ? 'text-slate-900 group-hover:text-red-600' 
+                        : 'text-white group-hover:text-red-500'
+                    }`}>
+                        АУТОГАЗ
+                    </span>
+                    
+                    {/* "VARNA" частта */}
+                    <span className={`text-xl lg:text-2xl font-light tracking-widest transition-all duration-300 ${
+                        isScrolled ? 'text-red-600 group-hover:text-slate-900' : 'text-red-500 group-hover:text-white'
+                    }`}>
+                        ВАРНА
+                    </span>
+                </div>
 
-    {/* Ховър линия - разпъва се от центъра или отляво */}
-    <div className={`h-0.5 w-0 group-hover:w-full transition-all duration-500 ${
-        isScrolled ? 'bg-red-600' : 'bg-red-500'
-    }`}></div>
+                {/* Ховър линия - разпъва се от центъра или отляво */}
+                <div className={`h-0.5 w-0 group-hover:w-full transition-all duration-500 ${
+                    isScrolled ? 'bg-red-600' : 'bg-red-500'
+                }`}></div>
 
-    {/* Подзаглавие */}
-    <span className={`text-[8px] lg:text-[10px] uppercase tracking-[0.3em] font-medium transition-colors duration-300 ${
-        isScrolled ? 'text-slate-500' : 'text-slate-400'
-    } group-hover:text-red-500`}>
-        Professional Gas Systems
-    </span>
-</Link>
+                {/* Подзаглавие */}
+                <span className={`text-[8px] lg:text-[10px] uppercase tracking-[0.3em] font-medium transition-colors duration-300 ${
+                    isScrolled ? 'text-slate-500' : 'text-slate-400'
+                } group-hover:text-red-500`}>
+                    Professional Gas Systems
+                </span>
+            </Link>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-4 lg:gap-8">

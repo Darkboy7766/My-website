@@ -88,17 +88,17 @@ const Navbar = () => {
             <Link to="/" className="flex flex-col items-start group no-underline">
                 {/* Основна част на логото */}
                 <div className="flex items-center space-x-1">
-                    <span className="text-2xl font-black tracking-tighter text-slate-900 transition-colors group-hover:text-red-600">
+                    <span className="text-xl lg:text-2xl font-black tracking-tighter transition-all duration-300 group-hover:text-red-600">
                     АУТОГАЗ
                     </span>
-                    <span className="text-2xl font-light tracking-widest text-red-600">
+                    <span className="text-xl lg:text-2xl font-light tracking-widest transition-all duration-300 text-red-600 group-hover:text-slate-900">
                     ВАРНА
                     </span>
                 </div>
                 
                 {/* Подзаглавие / Слоган (опционално) */}
-                <div className="h-0.5 w-0 group-hover:w-full bg-red-600 transition-all duration-300"></div>
-                <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-slate-500">
+                <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-red-600"></div>
+                <span className="text-[8px] lg:text-[10px] uppercase tracking-[0.3em] font-medium transition-colors duration-300 text-slate-500 group-hover:text-slate-950">
                     Professional Gas Systems
                 </span>
             </Link>
