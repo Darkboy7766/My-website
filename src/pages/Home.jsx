@@ -31,6 +31,12 @@ useEffect(() => {
   }, [location]);
   return (
     <>
+    {/* Тези тагове автоматично отиват в <head> */}
+      <title>Автогаз Варна | Газови Инжекциони и Сервиз</title>
+      <meta name="description" content="Професионален монтаж на АГУ във Варна. Над 20 години опит, диагностика и ремонт на газови уредби." />
+      <link rel="canonical" href="https://autogas-varna.com/" />
+      <meta property="og:title" content="Аутогаз-Варна" />
+
       <Header />
       <div id="hero"><Hero /></div>
       <div id="about"><About /></div>
