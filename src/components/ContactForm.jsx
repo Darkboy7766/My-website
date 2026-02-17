@@ -34,7 +34,7 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="w-full bg-slate-50 p-6 md:p-8 rounded-[2.5rem] border border-slate-100 shadow-sm"
+      className="w-full bg-slate-50 p-6 md:p-8 rounded-[2.5rem] border border-slate-200 shadow-sm hover:border-indigo-400 hover:shadow-sm"
     >
       {isSent ? (
         <motion.div 
@@ -64,12 +64,12 @@ const ContactForm = () => {
             />
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4 items-end">
+          <div className="flex flex-col md:flex-row gap-4">
             <textarea 
               name="message" // Трябва да съвпада с шаблона в EmailJS
               placeholder="Модел автомобил или въпрос..."
-              rows="1"
-              className="flex-1 px-5 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:border-indigo-500 transition-all text-sm resize-none min-h-11.5"
+              rows="2"
+              className="flex-1 px-5 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:border-indigo-500 transition-all text-sm"
             ></textarea>
             
             <button 

@@ -78,7 +78,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 bg-white px-5 relative">
+    <section className="py-10 bg-white px-5 relative">
       <div className="max-w-4xl mx-auto relative z-10">
         <Title 
           title="Въпроси и Отговори" 

@@ -11170,6 +11170,32 @@
         ]
       },
       {
+        "id": "VW-Passat-1",
+        "name": "VW-Passat-1",
+        "images": [
+          {
+            "original": "/assets/cars/volkswagen/VW-Passat-1/volkswagen_passat_1_b (1)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Passat-1/thumbnails/volkswagen_passat_1_b (1)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Passat-1/volkswagen_passat_1_b (2)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Passat-1/thumbnails/volkswagen_passat_1_b (2)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Passat-1/volkswagen_passat_1_b (3)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Passat-1/thumbnails/volkswagen_passat_1_b (3)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Passat-1/volkswagen_passat_1_b (4)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Passat-1/thumbnails/volkswagen_passat_1_b (4)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Passat-1/volkswagen_passat_1_b (5)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Passat-1/thumbnails/volkswagen_passat_1_b (5)_thumb.webp"
+          }
+        ]
+      },
+      {
         "id": "VW-Passat-2",
         "name": "VW-Passat-2",
         "images": [
@@ -11354,32 +11380,6 @@
           {
             "original": "/assets/cars/volkswagen/VW-Passat-7/volkswagen_passat_v6 (5)_large.webp",
             "thumbnail": "/assets/cars/volkswagen/VW-Passat-7/thumbnails/volkswagen_passat_v6 (5)_thumb.webp"
-          }
-        ]
-      },
-      {
-        "id": "VW-Passet-1",
-        "name": "VW-Passet-1",
-        "images": [
-          {
-            "original": "/assets/cars/volkswagen/VW-Passet-1/volkswagen_passat_1_b (1)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-Passet-1/thumbnails/volkswagen_passat_1_b (1)_thumb.webp"
-          },
-          {
-            "original": "/assets/cars/volkswagen/VW-Passet-1/volkswagen_passat_1_b (2)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-Passet-1/thumbnails/volkswagen_passat_1_b (2)_thumb.webp"
-          },
-          {
-            "original": "/assets/cars/volkswagen/VW-Passet-1/volkswagen_passat_1_b (3)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-Passet-1/thumbnails/volkswagen_passat_1_b (3)_thumb.webp"
-          },
-          {
-            "original": "/assets/cars/volkswagen/VW-Passet-1/volkswagen_passat_1_b (4)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-Passet-1/thumbnails/volkswagen_passat_1_b (4)_thumb.webp"
-          },
-          {
-            "original": "/assets/cars/volkswagen/VW-Passet-1/volkswagen_passat_1_b (5)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-Passet-1/thumbnails/volkswagen_passat_1_b (5)_thumb.webp"
           }
         ]
       },

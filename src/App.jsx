@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import BrandPage from './pages/BrandPage';
 import ModelGalleryPage from './pages/ModelGalleryPage';
 import Prices from './pages/Prices';
+import ScrollToTop from './components/ScrollToTop';
 import { ReactLenis, useLenis } from 'lenis/react';
 
 const App = () => {
@@ -62,6 +63,10 @@ const App = () => {
       document.body.appendChild(button);
     }
 
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+}
+
     // Почистване при изтриване на компонента
     return () => {
       const btn = document.getElementById('manual-scroll-top');
@@ -71,8 +76,8 @@ const App = () => {
 
   return (
     <>
-      <ReactLenis root> {/* Lenis като самозатварящ се таг е най-добре за root */}
-      
+      <ReactLenis root> 
+      <ScrollToTop />
       <div className="relative z-10">
         {location.pathname === '/' ? <Header /> : <Navbar />}
         <main>

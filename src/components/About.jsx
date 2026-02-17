@@ -22,7 +22,7 @@ const About = () => {
   };
 
   return (
-    <div className="py-20 bg-white overflow-hidden">
+    <div className="py-10 bg-white overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
