@@ -49,7 +49,8 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="w-full h-auto object-cover rounded-2xl"
               src={assets.banner}
-              alt="Сервиз Аутогаз Варна" 
+              alt="Сервиз за монтаж на газов инжекцион - Аутогаз Варна"
+              loading="lazy" 
             />
           </div>
           {/* Декоративни елементи, които препращат към Hero секцията */}

@@ -11,7 +11,9 @@ const Services = () => {
       subtitle: "Италианско Качество и Иновации",
       desc: "Като официални партньори, предлагаме най-новите решения от италианския лидер. Синоним на надеждност и дългосрочна експлоатация.",
       width: "w-32",
-      accent: "from-blue-600 to-indigo-600"
+      accent: "from-blue-600 to-indigo-600",
+      alt: "BRC газов инжекцион от Аутогаз-Варна",
+      loading: "lazy"
     },
     {
       img: assets.prins_logo,
@@ -19,7 +21,9 @@ const Services = () => {
       subtitle: "Холандска Прецизност",
       desc: "Сертифициран монтаж на Prins - холандската марка, известна със своите високотехнологични решения за двигатели с директно впръскване.",
       width: "w-36",
-      accent: "from-indigo-600 to-purple-600"
+      accent: "from-indigo-600 to-purple-600",
+      alt: "Prins газов инжекцион от Аутогаз-Варна",
+      loading: "lazy"
     },
     {
       img: assets.aeb_logo,
@@ -27,7 +31,9 @@ const Services = () => {
       subtitle: "Проверено Европейско Качество",
       desc: "Италиански производител с богата история. Техните системи предлагат оптимално съчетание между цена и качество за всеки автомобил.",
       width: "w-36",
-      accent: "from-blue-500 to-cyan-500"
+      accent: "from-blue-500 to-cyan-500",
+      alt: "AEB газов инжекцион от Аутогаз-Варна",
+      loading: "lazy"
     }
   ];
 

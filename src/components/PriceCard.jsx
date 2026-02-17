@@ -19,7 +19,7 @@ const PriceTable = ({ brand, logo, prices, delay }) => {
       {/* Header */}
       <div className="p-6 bg-slate-50 flex items-center justify-between border-b border-slate-100">
         <div className="bg-white p-2 rounded-2xl shadow-sm border border-slate-100">
-          <img className="h-8 object-contain" src={logo} alt={brand} />
+          <img className="h-8 object-contain" src={logo} alt={brand} loading="lazy" />
         </div>
         <span className="text-2xl font-black text-slate-800 tracking-tighter uppercase">
           {brand}
