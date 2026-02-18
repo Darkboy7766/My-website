@@ -80,6 +80,10 @@ const FAQ = () => {
   return (
     <section className="py-10 bg-white px-5 relative">
       <div className="max-w-4xl mx-auto relative z-10">
+
+        <title>Често задавани въпроси за Автогаз | Аутогаз Варна</title>
+        <meta name="description" content="Всичко, което трябва да знаете за монтажа на газова уредба: разход на гориво, поддръжка, цени и гаранция. Професионални отговори от Аутогаз Варна." />
+
         <Title 
           title="Въпроси и Отговори" 
           subTitle="Всичко, което трябва да знаете за преминаването на алтернативно гориво." 

@@ -23,6 +23,23 @@ const Gallery = () => {
 
   return (
     <div className="bg-slate-50 min-h-screen"> {/* Светъл фон за контраст */}
+
+    <title>Галерия с монтажи на газов инжекцион във Варна | Аутогаз Варна</title>
+      <meta name="description" content="Разгледайте снимки от нашия сервиз във Варна: монтаж на газови инжекциони, подредба на компоненти и завършени автомобили. Вижте качеството на нашата работа!" />
+      <link rel="canonical" href="https://autogas-varna.com/Gallery" />
+      <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Проекти на Аутогаз Варна",
+    "description": "Снимки на монтирани газови уредби и инжекциони на различни модели автомобили.",
+    "creator": {
+      "@type": "LocalBusiness",
+      "name": "Аутогаз Варна"
+    }
+  })}
+</script>
+    
       <Promo 
         title="Нашите Проекти" 
         subTitle="Вижте прецизния монтаж и вниманието към детайла при всяка инсталирана система." 

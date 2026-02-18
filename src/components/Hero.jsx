@@ -13,7 +13,7 @@ const Hero = () => {
         initial={{ opacity: 0, x: -50 }} 
         animate={{ opacity: 1, x: 0 }}    
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className='relative z-10 bg-black/20 backdrop-blur-sm p-6 md:p-10 rounded-2xl border border-white/10 shadow-2xl'
+        className='relative z-10 bg-black/20 backdrop-blur-sm w-auto p-6 mt-16 md:mt-25 sm:mt-10 rounded-2xl border border-white/10 shadow-2xl'
       >
         {/* Анимиран бутон/линк */}
         <motion.a layout

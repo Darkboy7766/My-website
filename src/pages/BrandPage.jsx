@@ -33,6 +33,7 @@ const BrandPage = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
+
       <Promo 
         title={brand.name} 
         subTitle={`Професионално инсталирани газови системи за всички модели на ${brand.name}`}
