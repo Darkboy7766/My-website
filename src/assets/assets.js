@@ -1,8 +1,6 @@
 import logoLight from './autogas-logo-light-200.webp'
 import logoDark from './logo-dark-200.webp'
-import bg_07 from "./07.jpg";
 import banner from "./banner-855.webp";
-import jtn_bg from "./jtn-bg-1024.webp";
 import brc_logo from "./brc-logo-150.webp";
 import prins_logo from "./prins-logo.webp";
 import aeb_logo from "./aeb-logo.webp";
@@ -12,9 +10,7 @@ import prins_logo_90 from "./prins-logo-90.webp";
 export const assets = {
     logoLight,
     logoDark,
-    bg_07,
     banner,
-    jtn_bg,
     brc_logo,
     prins_logo,
     aeb_logo,
