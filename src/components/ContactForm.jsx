@@ -13,9 +13,9 @@ const ContactForm = () => {
     setIsSending(true);
 
     // ЗАМЕНИ ТЕЗИ ТРИ СТОЙНОСТИ С ТВОИТЕ ОТ EMAILJS
-    const SERVICE_ID = 'service_o7d2g1q';
-    const TEMPLATE_ID = 'template_j7fkj3c';
-    const PUBLIC_KEY = 'ITTsUr-1d719WbCf4';
+    const SERVICE_ID = import.meta.env.VITE_CONTACT_FORM_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_CONTACT_FORM_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_CONTACT_FORM_PUBLIC_KEY;
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
       .then((result) => {

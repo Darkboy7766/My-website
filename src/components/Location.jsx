@@ -1,28 +1,28 @@
 import React from 'react'
 import Title from './Title' // Използваме основния Title за консистенция
 import { motion } from 'motion/react'
-import { MdOutlineEmail, MdOutlineLocationOn, MdOutlinePhone } from 'react-icons/md'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import Obfuscate from 'react-obfuscate'
 import ContactForm from './ContactForm'
 
 const Location = () => {
   const contactDetails = [
     {
-      icon: <MdOutlinePhone />,
+      icon: <Phone />,
       title: "Телефон",
       content: ["0887 67 59 81", "0879 00 50 51", "052 50 12 19"],
       delay: 0.2,
       isEmail: false
     },
     {
-      icon: <MdOutlineLocationOn />,
+      icon: <MapPin />,
       title: "Адрес",
       content: ["гр. Варна", 'бул. "Хр. Смирненски" до OMV'],
       delay: 0.4,
       isEmail: false
     },
     {
-      icon: <MdOutlineEmail />,
+      icon: <Mail />,
       title: "Имейл",
       content: ["info@autogas-varna.com", "autogas_varna@abv.bg"],
       delay: 0.6,
