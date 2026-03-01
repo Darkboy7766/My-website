@@ -17,6 +17,14 @@
 
 @import "tailwindcss";
 
+@theme {
+  /* Тук добавяш своите настройки */
+  --z-9999: 9999;
+  
+  /* Можеш да добавиш и цветове, ако искаш */
+  --color-brand-red: #cd2122;
+}
+
 html, body {
   max-width: 100%;
   position: relative;

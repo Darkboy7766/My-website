@@ -67,7 +67,7 @@ const Header = () => {
     };
 
     return (
-        <header className="fixed top-0 left-0 w-full z-[9999] transition-all duration-300">
+        <header className="fixed top-0 left-0 w-full z-9999 transition-all duration-300">
             {/* TOPBAR - Коригиран за 3 номера */}
             <div className={`hidden md:flex w-full px-4 lg:px-10 font-medium text-[11px] lg:text-xs bg-white text-slate-800 border-b border-gray-100 transition-all duration-500 ease-in-out items-center justify-between ${isScrolled ? "h-0 py-0 opacity-0 overflow-hidden" : "h-10 opacity-100"}`} >
                 
@@ -120,6 +120,7 @@ const Header = () => {
                             ВАРНА
                         </span>
                     </div>
+                    <div className="h-0.5 w-0 group-hover:w-full bg-red-500 transition-all duration-300 mb-1"></div>
                     <span className={`text-[8px] lg:text-[10px] uppercase tracking-[0.3em] font-medium transition-colors duration-300 ${isScrolled ? 'text-slate-500' : 'text-slate-300'} group-hover:text-red-500`}>
                         Professional Gas Systems
                     </span>
@@ -158,7 +159,7 @@ const Header = () => {
 
                 {/* Mobile Hamburger */}
                 <div className="md:hidden flex items-center">
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative w-8 h-6 flex flex-col justify-between items-center focus:outline-none z-[100]">
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative w-8 h-6 flex flex-col justify-between items-center focus:outline-none z-100">
                         <span className={`w-full h-1 rounded-full transition-all duration-300 origin-left ${isMenuOpen ? "rotate-45 bg-slate-950" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
                         <span className={`w-full h-1 rounded-full transition-all duration-300 ${isMenuOpen ? "opacity-0" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
                         <span className={`w-full h-1 rounded-full transition-all duration-300 origin-left ${isMenuOpen ? "-rotate-45 bg-slate-950" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
@@ -168,7 +169,7 @@ const Header = () => {
                 {/* Mobile Overlay */}
                 <div 
                     aria-hidden={!isMenuOpen}
-                    className={`fixed inset-0 w-full h-screen bg-white text-slate-950 flex flex-col items-center justify-center gap-8 transition-all duration-500 z-[90] 
+                    className={`fixed inset-0 w-full h-screen bg-white text-slate-950 flex flex-col items-center justify-center gap-8 transition-all duration-500 z-90 
                     ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
                 >
                     <ul className="flex flex-col items-center gap-8 font-bold text-2xl" role="list">
