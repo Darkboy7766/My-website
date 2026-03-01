@@ -66,7 +66,7 @@ const BrandPage = () => {
 
             {/* Back Button */}
             <Link
-              to="/Gallery"
+              to="/galeriya"
               className="group flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-red-500/40"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />

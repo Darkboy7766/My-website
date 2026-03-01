@@ -112,7 +112,7 @@ const FAQ = () => {
         >
           <h3 className="text-xl font-bold mb-2">Имате друг въпрос?</h3>
           <p className="text-indigo-100 mb-6 text-sm">Нашите експерти са на Ваше разположение за безплатна консултация.</p>
-          <Link to="/Contact" className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-indigo-50 transition-colors">
+          <Link to="/kontakti" className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-indigo-50 transition-colors">
             Свържи се с нас
           </Link>
         </motion.div>

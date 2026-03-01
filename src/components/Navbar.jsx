@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 const Navbar = () => {
     const navLinks = [
         { name: 'Начало', path: '/' },
-        { name: 'Цени', path: '/Prices' },
-        { name: 'Галерия', path: '/Gallery' },
-        { name: 'Контакти', path: '/Contact' },
+        { name: 'Цени', path: '/tseni-gazov-inzhekcion' },
+        { name: 'Галерия', path: '/galeriya' },
+        { name: 'Контакти', path: '/kontakti' },
     ];
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
         // Затваряме мобилното меню веднага
         setIsMenuOpen(false);
 
-        if (location.pathname === '/Contact') {
+        if (location.pathname === '/kontakti') {
             e.preventDefault();
             const contactSection = document.getElementById('contact-form-section');
             if (contactSection) {
@@ -28,7 +28,7 @@ const Navbar = () => {
             }
         } else {
             // Ако не сме на страницата, навигираме
-            navigate('/Contact');
+            navigate('/kontakti');
             // Timeout за изчакване на рендирането
             setTimeout(() => {
                 const contactSection = document.getElementById('contact-form-section');
@@ -112,7 +112,7 @@ const Navbar = () => {
                     ))}
                 </ul>
                 
-                <Link to="/Contact" onClick={handleActionClick}>
+                <Link to="/kontakti" onClick={handleActionClick}>
                     <motion.div 
                         variants={pulseVariants}
                         animate={isScrolled ? "active" : "stop"}

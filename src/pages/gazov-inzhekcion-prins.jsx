@@ -4,7 +4,7 @@ import { assets } from '../assets/assets';
 import { Link } from 'react-router-dom';
 import Title from '../components/Title';
 
-const PrinsPage = () => {
+const GazovInzhekcionPrins = () => {
   return (
     <div className="min-h-screen bg-white pt-24 pb-16 px-5">
         <Title 
@@ -57,7 +57,7 @@ const PrinsPage = () => {
         </div>
 
         <div className="text-center">
-          <Link to="/prices" className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-700 transition-all shadow-lg">
+          <Link to="/tseni-gazov-inzhekcion" className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-700 transition-all shadow-lg">
             Вижте цените за монтаж на Prins
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -69,4 +69,4 @@ const PrinsPage = () => {
   );
 };
 
-export default PrinsPage;
+export default GazovInzhekcionPrins;

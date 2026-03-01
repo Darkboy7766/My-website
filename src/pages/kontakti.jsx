@@ -3,7 +3,7 @@ import Promo from '../components/Promo'
 import Location from '../components/Location'
 import Footer from '../components/Footer'
 
-const Contact = () => {
+const Kontakti = () => {
   return (
     <div>
       <title>Аутогаз Варна | Адрес и Контакти на сервиза за АГУ</title>
@@ -21,4 +21,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Kontakti

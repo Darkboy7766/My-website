@@ -21,7 +21,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          href="./Contact" 
+          href="./kontakti" 
           className="inline-flex items-center gap-5 lg:gap-10 xl:gap-12 bg-slate-800/80 border border-slate-700 rounded-full text-sm hover:bg-slate-700/90 transition-all group mb-6"
         >
           <span className="bg-indigo-600 text-xs px-4 py-2.5 rounded-full font-bold uppercase tracking-wider">

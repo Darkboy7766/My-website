@@ -3,16 +3,16 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
+import Gallery from './pages/galeriya';
+import Kontakti from './pages/kontakti';
 import BrandPage from './pages/BrandPage';
 import ModelGalleryPage from './pages/ModelGalleryPage';
-import Prices from './pages/Prices';
-import BRCPage from './pages/BRCPage';
-import AEBPage from './pages/AEBPage';
-import PrinsPage from './pages/PrinsPage';
 import ScrollToTop from './components/ScrollToTop';
 import { ReactLenis, useLenis } from 'lenis/react';
+import GazovInzhekcionBrc from './pages/gazov-inzhekcion-brc';
+import GazovInzhekcionPrins from './pages/gazov-inzhekcion-prins';
+import GazovInzhekcionAeb from './pages/gazov-inzhekcion-aeb';
+import TseniGazovInzhekcion from './pages/tseni-gazov-inzhekcion';
 
 const App = () => {
   const location = useLocation();
@@ -88,11 +88,11 @@ const App = () => {
 
             <Route path='/' element={<Home />}/>
 
-            <Route path='/Prices' element={<Prices />}/>
+            <Route path='/tseni-gazov-inzhekcion' element={<TseniGazovInzhekcion />}/>
 
-            <Route path='/Gallery' element={<Gallery />}/>
+            <Route path='/galeriya' element={<Gallery />}/>
 
-            <Route path='/Contact' element={<Contact />}/>
+            <Route path='/kontakti' element={<Kontakti />}/>
 
             <Route path='/brand/:brandId' element={<BrandPage />} />
 
@@ -100,11 +100,11 @@ const App = () => {
 
             <Route path="/" element={<Home />} />
             
-            <Route path="/services/brc" element={<BRCPage />} />
+            <Route path="/gazov-inzhekcion-brc" element={<GazovInzhekcionBrc />} />
 
-            <Route path="/services/prins" element={<PrinsPage />} />
+            <Route path="/gazov-inzhekcion-prins" element={<GazovInzhekcionPrins />} />
 
-            <Route path="/services/aeb" element={<AEBPage />} />
+            <Route path="/gazov-inzhekcion-aeb" element={<GazovInzhekcionAeb />} />
 
           </Routes>
         </main>

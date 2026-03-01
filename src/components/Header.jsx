@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 const Header = () => {
     const navLinks = [
         { name: 'Начало', path: '/' },
-        { name: 'Цени', path: '/Prices' },
-        { name: 'Галерия', path: '/Gallery' },
-        { name: 'Контакти', path: '/Contact' },
+        { name: 'Цени', path: '/tseni-gazov-inzhekcion' },
+        { name: 'Галерия', path: '/galeriya' },
+        { name: 'Контакти', path: '/kontakti' },
     ];
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -17,7 +17,7 @@ const Header = () => {
     const navigate = useNavigate();
 
     const handleActionClick = (e) => {
-        if (location.pathname === '/Contact') {
+        if (location.pathname === '/kontakti') {
             e.preventDefault();
             setIsMenuOpen(false);
             const contactSection = document.getElementById('contact-form-section');
@@ -25,7 +25,7 @@ const Header = () => {
                 contactSection.scrollIntoView({ behavior: 'smooth' });
             }
         } else {
-            navigate('/Contact');
+            navigate('/kontakti');
             setTimeout(() => {
                 const contactSection = document.getElementById('contact-form-section');
                 if (contactSection) {
@@ -142,7 +142,7 @@ const Header = () => {
                         ))}
                     </ul>
                     
-                    <Link to="/Contact" onClick={handleActionClick}>
+                    <Link to="/kontakti" onClick={handleActionClick}>
                         <motion.div 
                             variants={pulseVariants}
                             animate={isScrolled ? "active" : "stop"}
@@ -186,7 +186,7 @@ const Header = () => {
                             </li>
                         ))}
                     </ul>
-                    <Link to="/Contact" onClick={handleActionClick} className={`transition-all duration-500 delay-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+                    <Link to="/kontakti" onClick={handleActionClick} className={`transition-all duration-500 delay-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
                         <motion.div 
                             variants={pulseVariants}
                             animate="active"

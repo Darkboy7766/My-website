@@ -3,7 +3,7 @@ import Promo from '../components/Promo'
 import PriceCard from '../components/PriceCard'
 import Footer from '../components/Footer'
 
-const Prices = () => {
+const TseniGazovInzhekcion = () => {
   return (
     <div>
 
@@ -45,4 +45,4 @@ const Prices = () => {
   )
 }
 
-export default Prices
+export default TseniGazovInzhekcion
