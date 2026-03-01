@@ -159,7 +159,7 @@ const Header = () => {
 
                 {/* Mobile Hamburger */}
                 <div className="md:hidden flex items-center">
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative w-8 h-6 flex flex-col justify-between items-center focus:outline-none z-100">
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative w-8 h-6 flex flex-col justify-between items-center focus:outline-none z-100" aria-label="Отвори менюто">
                         <span className={`w-full h-1 rounded-full transition-all duration-300 origin-left ${isMenuOpen ? "rotate-45 bg-slate-950" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
                         <span className={`w-full h-1 rounded-full transition-all duration-300 ${isMenuOpen ? "opacity-0" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
                         <span className={`w-full h-1 rounded-full transition-all duration-300 origin-left ${isMenuOpen ? "-rotate-45 bg-slate-950" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />

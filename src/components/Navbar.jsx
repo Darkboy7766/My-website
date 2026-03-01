@@ -131,7 +131,7 @@ const Navbar = () => {
             <div className="md:hidden flex items-center">
                 <button 
                     onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                    className="relative w-8 h-6 flex flex-col justify-between items-center z-100"
+                    className="relative w-8 h-6 flex flex-col justify-between items-center z-100" aria-label="Отвори менюто"
                 >
                     <span className={`w-full h-1 rounded-full transition-all ${isMenuOpen ? "rotate-45 translate-y-2.5 bg-slate-950" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
                     <span className={`w-full h-1 rounded-full transition-all ${isMenuOpen ? "opacity-0" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
@@ -154,7 +154,7 @@ const Navbar = () => {
                 </ul>
                 
                 {/* Тук оправихме мобилния бутон */}
-                <button onClick={handleActionClick} className="mt-4">
+                <button onClick={handleActionClick} className="mt-4" aria-label="Отвори менюто">
                     <motion.div 
                         variants={pulseVariants}
                         animate="active"

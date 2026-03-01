@@ -4,7 +4,7 @@ import Promo from "../components/Promo";
 import Footer from "../components/Footer";
 import TitleH3 from "../components/TitleH3";
 
-const Gallery = () => {
+const Galeriya = () => {
   const [carBrands, setCarBrands] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -70,4 +70,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Galeriya;

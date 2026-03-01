@@ -1,14 +1,14 @@
 RewriteEngine On
 RewriteBase /
 
-# 1. СТАРИТЕ РЕДИРЕКТИ (към новите URL адреси)
+# 1. СТАРИТЕ РЕДИРЕКТИ (Към новите малки букви)
 RewriteRule ^index\.html$ / [R=301,L]
-RewriteRule ^price\.html$ /Prices [R=301,L,NC]
-RewriteRule ^gallery\.html$ /Gallery [R=301,L,NC]
-RewriteRule ^contact\.html$ /Contact [R=301,L,NC]
+RewriteRule ^price\.html$ /tseni-gazov-inzhekcion [R=301,L,NC]
+RewriteRule ^gallery\.html$ /galeriya [R=301,L,NC]
+RewriteRule ^contact\.html$ /kontakti [R=301,L,NC]
 
-# 2. REACT ROUTER FIX (пренасочва всичко останало към index.html)
-# Това премахва 404 грешките при рефреш на страницата
+# 2. REACT ROUTER FIX
+# Ако файлът или директорията не съществуват реално, зареди index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]

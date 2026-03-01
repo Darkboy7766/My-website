@@ -1,18 +1,19 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState, useEffect,Suspense, lazy } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { ReactLenis, useLenis } from 'lenis/react';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Gallery from './pages/galeriya';
-import Kontakti from './pages/kontakti';
-import BrandPage from './pages/BrandPage';
-import ModelGalleryPage from './pages/ModelGalleryPage';
-import ScrollToTop from './components/ScrollToTop';
-import { ReactLenis, useLenis } from 'lenis/react';
-import GazovInzhekcionBrc from './pages/gazov-inzhekcion-brc';
-import GazovInzhekcionPrins from './pages/gazov-inzhekcion-prins';
-import GazovInzhekcionAeb from './pages/gazov-inzhekcion-aeb';
-import TseniGazovInzhekcion from './pages/tseni-gazov-inzhekcion';
+
+const BrandPage = lazy(() => import('./pages/BrandPage'));
+const ModelGalleryPage = lazy(() => import('./pages/ModelGalleryPage'));
+const ScrollToTop = lazy(() => import('./components/ScrollToTop'));
+const TseniGazovInzhekcion = lazy(() => import('./pages/tseni-gazov-inzhekcion'));
+const Galeriya = lazy(() => import('./pages/galeriya'));
+const Kontakti = lazy(() => import('./pages/kontakti'));
+const GazovInzhekcionBrc = lazy(() => import('./pages/gazov-inzhekcion-brc'));
+const GazovInzhekcionAeb = lazy(() => import('./pages/gazov-inzhekcion-aeb'));
+const GazovInzhekcionPrins = lazy(() => import('./pages/gazov-inzhekcion-prins'));
 
 const App = () => {
   const location = useLocation();
@@ -84,13 +85,14 @@ const App = () => {
       <div className="relative z-10">
         {location.pathname === '/' ? <Header /> : <Navbar />}
         <main>
+          <Suspense fallback={<div className='loading'>Зареждане...</div>}>
           <Routes>
 
             <Route path='/' element={<Home />}/>
 
             <Route path='/tseni-gazov-inzhekcion' element={<TseniGazovInzhekcion />}/>
 
-            <Route path='/galeriya' element={<Gallery />}/>
+            <Route path='/galeriya' element={<Galeriya />}/>
 
             <Route path='/kontakti' element={<Kontakti />}/>
 
@@ -107,6 +109,7 @@ const App = () => {
             <Route path="/gazov-inzhekcion-aeb" element={<GazovInzhekcionAeb />} />
 
           </Routes>
+          </Suspense>
         </main>
       </div>
 
