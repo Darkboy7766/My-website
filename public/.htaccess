@@ -1,0 +1,37 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. СТАРИТЕ РЕДИРЕКТИ (към новите URL адреси)
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^price\.html$ /Prices [R=301,L,NC]
+RewriteRule ^gallery\.html$ /Gallery [R=301,L,NC]
+RewriteRule ^contact\.html$ /Contact [R=301,L,NC]
+
+# 2. REACT ROUTER FIX (пренасочва всичко останало към index.html)
+# Това премахва 404 грешките при рефреш на страницата
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Активиране на Gzip компресия
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Кеширане на ресурси (за 100% Performance)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# Поддръжка на React Router (да не дава 404 при рефреш)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

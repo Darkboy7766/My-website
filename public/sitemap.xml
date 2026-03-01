@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://autogas-varna.com/</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://autogas-varna.com/Prices</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://autogas-varna.com/Gallery</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://autogas-varna.com/Contact</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://autogas-varna.com/AEBPage</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://autogas-varna.com/BRCPage</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://autogas-varna.com/PrinsPage</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+</urlset>

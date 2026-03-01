@@ -8,6 +8,9 @@ import Contact from './pages/Contact';
 import BrandPage from './pages/BrandPage';
 import ModelGalleryPage from './pages/ModelGalleryPage';
 import Prices from './pages/Prices';
+import BRCPage from './pages/BRCPage';
+import AEBPage from './pages/AEBPage';
+import PrinsPage from './pages/PrinsPage';
 import ScrollToTop from './components/ScrollToTop';
 import { ReactLenis, useLenis } from 'lenis/react';
 
@@ -82,17 +85,27 @@ const App = () => {
         {location.pathname === '/' ? <Header /> : <Navbar />}
         <main>
           <Routes>
-             <Route path='/' element={<Home />}/>
 
-          <Route path='/Prices' element={<Prices />}/>
+            <Route path='/' element={<Home />}/>
 
-          <Route path='/Gallery' element={<Gallery />}/>
+            <Route path='/Prices' element={<Prices />}/>
 
-          <Route path='/Contact' element={<Contact />}/>
+            <Route path='/Gallery' element={<Gallery />}/>
 
-          <Route path='/brand/:brandId' element={<BrandPage />} />
+            <Route path='/Contact' element={<Contact />}/>
 
-          <Route path='/brand/:brandId/model/:modelId' element={<ModelGalleryPage />} />
+            <Route path='/brand/:brandId' element={<BrandPage />} />
+
+            <Route path='/brand/:brandId/model/:modelId' element={<ModelGalleryPage />} />
+
+            <Route path="/" element={<Home />} />
+            
+            <Route path="/services/brc" element={<BRCPage />} />
+
+            <Route path="/services/prins" element={<PrinsPage />} />
+
+            <Route path="/services/aeb" element={<AEBPage />} />
+
           </Routes>
         </main>
       </div>

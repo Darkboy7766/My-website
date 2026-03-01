@@ -1,34 +1,41 @@
 import React from "react";
-import { Mail } from 'lucide-react';
-import { Clock8 } from 'lucide-react';
-import { Phone } from 'lucide-react';
-import { Smartphone } from 'lucide-react';
+import { Mail, Clock8, Phone, Smartphone } from 'lucide-react';
 
 const Topbar = () => {
-
     return (
-       
-        <div className="hidden w-full md:flex py-2.5 px-1 font-medium text-xs  bg-white/80 text-slate-800 cursor-default" >
-        {/* Topbar left */}
-        <div className="flex md:w-auto lg, xl:w-1/2 items-center justify-start ml-3 xl:ml-10">
-            <Clock8 size={14} className="ml-2 lg:ml-5" />
-            <p><span className="py-1 mr-2"></span>Понеделник - Петък : 08 - 17 ч.</p>
-            <Mail  size={14} className="ml-2 lg:ml-5" />
-            <p><span className="py-1 mr-2"></span>info@autogas-varna.com</p>
-        </div>
-        
-            {/* Topbar Right */}
-            <div className="flex md:w-auto lg, xl:w-1/2 items-center justify-end ml-4 mr-3 xl:mr-10">
-            <Phone  size={14} />
-            <p><span className="py-1 ml-2">052 50 12 19</span></p>
-            <Smartphone size={14} className="ml-2 md:ml-3 lg:ml-5" />
-            <p><span className="py-1 mr-2"></span>0887 67 59 81</p>
-            <Smartphone size={14} className="ml-2 md:ml-3 lg:ml-5" />
-            <p><span className="py-1 mr-2"></span>0879 00 50 51</p>
-        </div>
-    </div>
+        /* Използваме flex-wrap, за да може ако няма място, елементите да не изчезват, 
+           а да се пренаредят, и намаляваме леко размера на текста за по-добра съвместимост */
+        <div className="hidden md:flex w-full py-2 px-4 lg:px-10 font-medium text-[11px] lg:text-xs bg-white/80 text-slate-800 border-b border-slate-100 items-center justify-between">
             
-
+            {/* Лява секция */}
+            <div className="flex items-center gap-4 shrink-0">
+                <div className="flex items-center gap-1.5">
+                    <Clock8 size={14} className="text-slate-500" />
+                    <span className="whitespace-nowrap">Пон - Пет: 08 - 17 ч.</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                    <Mail size={14} className="text-slate-500" />
+                    <span className="whitespace-nowrap underline decoration-slate-300">info@autogas-varna.com</span>
+                </div>
+            </div>
+            
+            {/* Дясна секция - Телефони */}
+            <div className="flex items-center gap-3 lg:gap-5 ml-4">
+                <div className="flex items-center gap-1 shrink-0">
+                    <Phone size={13} className="text-slate-500" />
+                    <span className="whitespace-nowrap">052 50 12 19</span>
+                </div>
+                <div className="flex items-center gap-1 shrink-0">
+                    <Smartphone size={13} className="text-slate-500" />
+                    <span className="whitespace-nowrap">0887 67 59 81</span>
+                </div>
+                {/* Тук е третият номер - добавяме му min-width, за да сме сигурни, че се рендира */}
+                <div className="flex items-center gap-1 shrink-0 min-w-fit">
+                    <Smartphone size={13} className="text-slate-500" />
+                    <span className="whitespace-nowrap">0879 00 50 51</span>
+                </div>
+            </div>
+        </div>
     );
 };
 

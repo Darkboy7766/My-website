@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Добавихме useNavigate
-import { assets } from "../assets/assets";
-import { motion } from "motion/react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"; // Провери името на пакета (обикновено е framer-motion)
 
 const Navbar = () => {
     const navLinks = [
@@ -13,15 +12,15 @@ const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const location = useLocation(); 
-    const navigate = useNavigate(); // За пренасочване
+    const location = useLocation();
+    const navigate = useNavigate();
 
     // Функция за скролване или навигация
-    const handleActionClick = () => {
-        setIsMenuOpen(false); // Затваря мобилното меню ако е отворено
-
+    const handleActionClick = (e) => {
+        // Предотвратяваме стандартното поведение на Link само ако сме на същата страница
         if (location.pathname === '/Contact') {
-            // Ако сме на страницата, само скролваме
+            e.preventDefault();
+            setIsMenuOpen(false);
             const contactSection = document.getElementById('contact-form-section');
             if (contactSection) {
                 contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -40,63 +39,63 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-      const handleScroll = () => {
-        const isMobile = window.innerWidth < 768;
-        if (isMobile) {
-          setIsScrolled(true);
-          return;
-        }
-    
-        if (location.pathname !== '/') {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(window.scrollY > 10);
-        }
-      };
-    
-      handleScroll();
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("resize", handleScroll);
-    
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-        window.removeEventListener("resize", handleScroll);
-      };
+        const handleScroll = () => {
+            const isMobile = window.innerWidth < 768;
+            if (isMobile) {
+                setIsScrolled(true);
+                return;
+            }
+
+            if (location.pathname !== '/') {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(window.scrollY > 10);
+            }
+        };
+
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleScroll);
+        };
     }, [location.pathname]);
 
     const pulseVariants = {
         active: {
             scale: [1, 1.03, 1],
             transition: {
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
             }
         },
         stop: {
             scale: 1
         }
-        };
+    };
 
     return (
-        <nav className={`w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-300 z-9999 
+        <nav 
+            aria-label="Основна навигация"
+            className={`w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-300 z-9999 
             ${isScrolled 
-                ? "fixed top-0 bg-white/80 backdrop-blur-md py-3 shadow-md" 
-                : "bg-transparent py-5 text-white"}`}>
+                ? "fixed top-0 bg-white/90 py-3 shadow-md" 
+                : "bg-transparent text-white"}`}
+        >
 
             {/* Logo */}
-            <Link to="/" className="flex flex-col items-start group no-underline">
-                {/* Основна част на логото */}
+            <Link to="/" className="flex flex-col items-start group no-underline" aria-label="Автогаз Варна - Начало">
                 <div className="flex items-center space-x-1">
                     <span className="text-xl lg:text-2xl font-black tracking-tighter transition-all duration-300 group-hover:text-red-600">
-                    АУТОГАЗ
+                        АУТОГАЗ
                     </span>
                     <span className="text-xl lg:text-2xl font-light tracking-widest transition-all duration-300 text-red-600 group-hover:text-slate-900">
-                    ВАРНА
+                        ВАРНА
                     </span>
                 </div>
-                
-                {/* Подзаглавие / Слоган (опционално) */}
                 <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-red-600"></div>
                 <span className="text-[8px] lg:text-[10px] uppercase tracking-[0.3em] font-medium transition-colors duration-300 text-slate-500 group-hover:text-slate-950">
                     Professional Gas Systems
@@ -105,36 +104,43 @@ const Navbar = () => {
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-4 lg:gap-8">
-                {navLinks.map((link, i) => (
-                    <Link 
-                        key={i} 
-                        to={link.path} 
-                        className={`group flex flex-col gap-0.5 font-medium transition-colors ${isScrolled ? "text-slate-950" : "text-white"}`}
-                    >
-                        {link.name}
-                        <div className={`h-0.5 w-0 group-hover:w-full transition-all ${isScrolled ? "bg-slate-800" : "bg-white"}`} />
-                    </Link>
-                ))}
+                <ul className="flex items-center gap-4 lg:gap-8" role="list">
+                    {navLinks.map((link, i) => (
+                        <li key={i}>
+                            <Link 
+                                to={link.path} 
+                                aria-current={location.pathname === link.path ? "page" : undefined}
+                                className={`group flex flex-col gap-0.5 font-medium transition-colors ${isScrolled ? "text-slate-950" : "text-white"}`}
+                            >
+                                {link.name}
+                                <div className={`h-0.5 w-0 group-hover:w-full transition-all ${isScrolled ? "bg-red-600" : "bg-white"} ${location.pathname === link.path ? "w-full" : ""}`} />
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
                 
-                {/* Desktop Button */}
-                <motion.button 
-                    onClick={handleActionClick}
-                    variants={pulseVariants}
-                    animate={isScrolled ? "active" : "stop"}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`border px-6 py-2 text-sm font-bold rounded-full cursor-pointer transition-all 
-                    ${isScrolled 
-                        ? "border-[#cd2122] text-[#cd2122] shadow-lg shadow-red-500/10" 
-                        : "border-white text-white hover:bg-white hover:text-slate-900"}`}
-                >
-                    ЗАПАЗИ ЧАС
-                </motion.button>
+                {/* Desktop Button - Обвит в Link за SEO */}
+                <Link to="/Contact" onClick={handleActionClick}>
+                    <motion.div 
+                        variants={pulseVariants}
+                        animate={isScrolled ? "active" : "stop"}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`border px-6 py-2 text-sm font-bold rounded-full cursor-pointer transition-all 
+                        ${isScrolled 
+                            ? "border-[#cd2122] text-[#cd2122] shadow-lg shadow-red-500/10" 
+                            : "border-white text-white hover:bg-white hover:text-slate-900"}`}
+                    >
+                        ЗАПАЗИ ЧАС
+                    </motion.div>
+                </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center z-70">
-                <button 
+                <button
+                    aria-label={isMenuOpen ? "Затвори менюто" : "Отвори менюто"} 
+                    aria-expanded={isMenuOpen}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     className="relative w-8 h-6 flex flex-col justify-between items-center focus:outline-none"
                 >
@@ -148,31 +154,36 @@ const Navbar = () => {
             </div>
     
             {/* Mobile Menu Overlay */}
-            <div className={`fixed inset-0 w-full h-screen bg-white text-slate-950 flex flex-col items-center justify-center gap-8 font-bold text-2xl transition-all duration-500 z-60 active:scale-95 
-                ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}>
+            <div 
+                aria-hidden={!isMenuOpen}
+                className={`fixed inset-0 w-full h-screen bg-white text-slate-950 flex flex-col items-center justify-center gap-8 font-bold text-2xl transition-all duration-500 z-60 
+                ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
+            >
+                <ul className="flex flex-col items-center gap-8" role="list">
+                    {navLinks.map((link, i) => (
+                        <li key={i}>
+                            <Link 
+                                to={link.path} 
+                                onClick={() => setIsMenuOpen(false)}
+                                style={{ transitionDelay: isMenuOpen ? `${i * 100}ms` : "0ms" }}
+                                className={`block transform transition-all duration-500 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                            >
+                                {link.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
                 
-                {navLinks.map((link, i) => (
-                    <Link 
-                        key={i} 
-                        to={link.path} 
-                        onClick={() => setIsMenuOpen(false)}
-                        className={`transform transition-all duration-500 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                <Link to="/Contact" onClick={handleActionClick} className={isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0 transition-all duration-500 delay-300"}>
+                    <motion.div 
+                        variants={pulseVariants}
+                        animate="active"
+                        whileTap={{ scale: 0.9 }}
+                        className="bg-[#cd2122] text-white px-10 py-4 rounded-full mt-4 shadow-xl shadow-red-500/30 font-black tracking-widest text-sm text-center"
                     >
-                        {link.name}
-                    </Link>
-                ))}
-                
-                {/* Mobile Button */}
-                {/* Вътре в Mobile Menu Overlay */}
-                <motion.button 
-                    onClick={handleActionClick}
-                    variants={pulseVariants}
-                    animate="active" // Винаги пулсира в мобилното меню
-                    whileTap={{ scale: 0.9 }}
-                    className="bg-[#cd2122] text-white px-10 py-4 rounded-full mt-4 shadow-xl shadow-red-500/30 font-black tracking-widest text-sm"
-                >
-                    ЗАПАЗИ ЧАС
-                </motion.button>
+                        ЗАПАЗИ ЧАС
+                    </motion.div>
+                </Link>
             </div>
         </nav>
     );

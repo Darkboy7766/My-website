@@ -1,6 +1,7 @@
 import React from 'react';
 import { assets } from '../assets/assets';
 import { motion } from 'motion/react'; // Увери се, че импортът съвпада с твоята инсталация
+import { MoveRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -28,10 +29,9 @@ const Hero = () => {
           </span>
           <p className="flex items-center gap-2 pr-4 text-gray-200">
             <span className="hidden sm:inline">Започни да спестяваш сега.</span>
-            <img 
-              src={assets.arrowIcon} 
+            <MoveRight
               alt="arrow-icon" 
-              className="invert w-4 h-4 group-hover:translate-x-2 transition-transform" 
+              className="w-6 h-6 group-hover:translate-x-2 transition-transform" 
             />
           </p>
         </motion.a>

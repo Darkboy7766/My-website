@@ -2,44 +2,44 @@ import React from 'react'
 import Title from './Title'
 import { assets } from '../assets/assets'
 import { motion } from 'motion/react'
+import { Link } from 'react-router-dom' // 1. Импортираме Link
 
 const Services = () => {
   const brands = [
     {
       img: assets.brc_logo,
       title: "BRC Gas Equipment",
+      path: "/services/brc", // 2. Добавяме път
       subtitle: "Италианско Качество и Иновации",
       desc: "Като официални партньори, предлагаме най-новите решения от италианския лидер. Синоним на надеждност и дългосрочна експлоатация.",
       width: "w-32",
       accent: "from-blue-600 to-indigo-600",
       alt: "BRC газов инжекцион от Аутогаз-Варна",
-      loading: "lazy"
     },
     {
       img: assets.prins_logo,
       title: "Prins Autogassystemen",
+      path: "/services/prins", // 2. Добавяме път
       subtitle: "Холандска Прецизност",
       desc: "Сертифициран монтаж на Prins - холандската марка, известна със своите високотехнологични решения за двигатели с директно впръскване.",
       width: "w-36",
       accent: "from-indigo-600 to-purple-600",
       alt: "Prins газов инжекцион от Аутогаз-Варна",
-      loading: "lazy"
     },
     {
       img: assets.aeb_logo,
       title: "AEB Alternative Fuel",
+      path: "/services/aeb", // 2. Добавяме път
       subtitle: "Проверено Европейско Качество",
       desc: "Италиански производител с богата история. Техните системи предлагат оптимално съчетание между цена и качество за всеки автомобил.",
       width: "w-36",
       accent: "from-blue-500 to-cyan-500",
       alt: "AEB газов инжекцион от Аутогаз-Варна",
-      loading: "lazy"
     }
   ];
 
   return (
     <section className="py-10 px-5 bg-white relative overflow-hidden">
-      {/* Декоративен фон за дълбочина */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10 opacity-50"></div>
 
       <Title 
@@ -58,7 +58,6 @@ const Services = () => {
             whileHover={{ y: -12 }} 
             className="group relative max-w-sm flex flex-col p-10 rounded-4xl bg-slate-50 border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500"
           >
-            {/* Градиентен акцент при Hover */}
             <div className={`absolute top-0 left-0 w-full h-2 rounded-t-4xl bg-linear-to-r ${brand.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
             <div className="h-24 flex items-start mb-8">
@@ -83,12 +82,16 @@ const Services = () => {
               {brand.desc}
             </p>
 
-            <div className="mt-auto flex items-center gap-2 text-indigo-600 font-bold text-sm cursor-pointer group/link">
+            {/* 3. Заменяме div с Link за истинска навигация */}
+            <Link 
+              to={brand.path} 
+              className="mt-auto flex items-center gap-2 text-indigo-600 font-bold text-sm group/link no-underline"
+            >
               Научи повече
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </div>
+            </Link>
           </motion.div>
         ))}
       </div>
@@ -96,4 +99,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default Services;
