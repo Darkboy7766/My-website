@@ -4,6 +4,7 @@ import { ReactLenis, useLenis } from 'lenis/react';
 import Home from './pages/Home';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import CookieBanner from './components/CookieBanner';
 
 const BrandPage = lazy(() => import('./pages/BrandPage'));
 const ModelGalleryPage = lazy(() => import('./pages/ModelGalleryPage'));
@@ -14,6 +15,7 @@ const Kontakti = lazy(() => import('./pages/kontakti'));
 const GazovInzhekcionBrc = lazy(() => import('./pages/gazov-inzhekcion-brc'));
 const GazovInzhekcionAeb = lazy(() => import('./pages/gazov-inzhekcion-aeb'));
 const GazovInzhekcionPrins = lazy(() => import('./pages/gazov-inzhekcion-prins'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 
 const App = () => {
   const location = useLocation();
@@ -108,12 +110,15 @@ const App = () => {
 
             <Route path="/gazov-inzhekcion-aeb" element={<GazovInzhekcionAeb />} />
 
+            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+
           </Routes>
           </Suspense>
         </main>
       </div>
 
       </ReactLenis>
+      <CookieBanner />
     </>
   )
 }
