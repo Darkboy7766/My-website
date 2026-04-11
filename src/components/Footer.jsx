@@ -76,7 +76,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm" role="list">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-indigo-500 shrink-0" />
-                <a href="https://maps.google.com/?q=гр.+Варна,+бул.+Хр.Смирненски" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">гр. Варна, бул. "Хр. Смирненски"</a>
+                <a href="https://maps.app.goo.gl/bwZX7BEFV68PKg6R7" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">гр. Варна, бул. "Хр. Смирненски"</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-indigo-500 shrink-0" />

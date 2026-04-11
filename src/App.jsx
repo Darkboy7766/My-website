@@ -37,6 +37,28 @@ const App = () => {
   });
 
   useEffect(() => {
+    // Инициализация на Google Ads (само веднъж)
+    const script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=AW-974051330"; // Заменете с вашия ID
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-974051330');
+  }, []);
+
+  useEffect(() => {
+    // Изпращане на събитие при всяка промяна на URL (route)
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: location.pathname,
+      });
+    }
+  }, [location]);
+
+  useEffect(() => {
     // Създаваме бутона ръчно веднъж при зареждане
     if (!document.getElementById('manual-scroll-top')) {
       const button = document.createElement('button');

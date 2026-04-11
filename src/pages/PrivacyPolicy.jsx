@@ -1,90 +1,119 @@
-import React from 'react'
+import React from 'react';
 
 const PrivacyPolicy = () => {
   return ( 
-        <div className="max-w-4xl mx-auto pt-34 p-8 text-slate-800 leading-relaxed">
-            <h1 className="text-3xl font-bold text-red-600 mb-6 uppercase tracking-tighter">Политика за поверителност</h1>
-            <p className="mb-4 font-semibold text-md">Последна актуализация: 01.03.2026 г.</p>
-            <section className="mb-6">
-                <h2 className="text-xl font-bold mb-3 border-b-2 border-slate-100">ПОЛИТИКА ЗА ПОВЕРИТЕЛНОСТ
-                    на „Аутогаз Варна ООД“</h2>
-                    <p></p>
+    <div className="max-w-4xl mx-auto pt-32 pb-20 px-6 md:px-8 text-slate-700 leading-relaxed font-sans">
+      
+      {/* Заглавна част */}
+      <header className="mb-12 border-b-4 border-red-600 pb-6">
+        <h1 className="text-3xl md:text-4xl font-black text-slate-900 mb-2 uppercase tracking-tighter">
+          Политика за поверителност
+        </h1>
+        <p className="font-medium text-slate-500 italic">
+          Последна актуализация: 01.03.2026 г.
+        </p>
+      </header>
 
-                    <p>В „Аутогаз Варна ООД“ (наричани по-долу „Ние“ или „Администраторът“) уважаваме Вашата поверителност и се ангажираме да защитаваме Вашите лични данни. Тази Политика за поверителност обяснява как събираме, използваме и съхраняваме Вашата информация, когато посещавате нашия уебсайт autogas-varna.com.</p>
+      <div className="space-y-12">
+        
+        {/* Въведение */}
+        <section>
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tight">
+            на „Аутогаз Варна ООД“
+          </h2>
+          <p className="text-lg">
+            В „Аутогаз Варна ООД“ (наричани по-долу „Ние“ или „Администраторът“) уважаваме Вашата поверителност и се ангажираме да защитаваме Вашите лични данни. Тази Политика за поверителност обяснява как събираме, използваме и съхраняваме Вашата информация, когато посещавате нашия уебсайт <span className="font-semibold text-red-600">autogas-varna.com</span>.
+          </p>
+        </section>
 
-                    <h3 className='font-semibold'>1. КОЙ Е АДМИНИСТРАТОРЪТ НА ВАШИТЕ ДАННИ?</h3>
-                    <p>Администратор на личните данни е фирмата, оперираща под бранда „Аутогаз Варна ООД“.
+        {/* 1. Администратор */}
+        <section className="bg-slate-50 p-6 rounded-2xl border-l-4 border-red-600 shadow-sm">
+          <h3 className='text-lg font-bold text-slate-900 mb-4 uppercase flex items-center'>
+            <span className="bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+            Кой е администраторът на Вашите данни?
+          </h3>
+          <div className="space-y-2 text-md">
+            <p><span className="font-bold text-slate-900">Фирма:</span> Аутогаз Варна ООД</p>
+            <p><span className="font-bold text-slate-900">Адрес:</span> гр. Варна, бул. "Христо Смирненски"</p>
+            <p><span className="font-bold text-slate-900">Имейл:</span> <a href="mailto:info@autogas-varna.com" className="text-red-600 hover:underline font-medium">info@autogas-varna.com</a></p>
+            <p><span className="font-bold text-slate-900">Телефон:</span> <a href="tel:+35952501219" className="text-red-600 hover:underline font-medium">052 50 12 19</a></p>
+          </div>
+        </section>
 
-                    Адрес: гр. Варна, бул.Хр. Смирнрнски
+        {/* 2. Лични данни */}
+        <section>
+          <h3 className='text-lg font-bold text-slate-900 mb-4 uppercase'>2. Какви лични данни събираме?</h3>
+          <p className="mb-4">Ние събираме информация, която Вие предоставяте доброволно чрез формите за контакт или при записване на час за обслужване:</p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <li className="flex items-start bg-white border border-slate-200 p-3 rounded-lg">
+              <span className="text-red-600 mr-2 font-bold">•</span>
+              <p><span className="font-bold">Идентификационни данни:</span> Име и фамилия.</p>
+            </li>
+            <li className="flex items-start bg-white border border-slate-200 p-3 rounded-lg">
+              <span className="text-red-600 mr-2 font-bold">•</span>
+              <p><span className="font-bold">Данни за контакт:</span> Телефонен номер и имейл.</p>
+            </li>
+            <li className="flex items-start bg-white border border-slate-200 p-3 rounded-lg">
+              <span className="text-red-600 mr-2 font-bold">•</span>
+              <p><span className="font-bold">Технически данни:</span> IP адрес, браузър и бисквитки.</p>
+            </li>
+            <li className="flex items-start bg-white border border-slate-200 p-3 rounded-lg">
+              <span className="text-red-600 mr-2 font-bold">•</span>
+              <p><span className="font-bold">Данни за автомобила:</span> Марка и модел.</p>
+            </li>
+          </ul>
+        </section>
 
-                    Имейл: info@autogas-varna.com
+        {/* 3. Цели */}
+        <section>
+          <h3 className='text-lg font-bold text-slate-900 mb-4 uppercase'>3. Цели на обработването</h3>
+          
+            <p>Вашите данни се обработват единствено за обработка на запитвания, записване на часове за монтаж/диагностика, директна комуникация и статистически анализ на трафика.</p>
+          
+        </section>
 
-                    Телефон:  052 50 12 19</p>
+        {/* 4. Правно основание */}
+        <section>
+          <h3 className='text-lg font-bold text-slate-900 mb-4 uppercase'>4. Правно основание за обработка</h3>
+          <p>Обработваме данните въз основа на преддоговорни отношения (за запитвания), легитимен интерес (функционалност на сайта) и Вашето изрично съгласие при изпращане на съобщение.</p>
+        </section>
 
-                    <h3 className='font-semibold'>2. КАКВИ ЛИЧНИ ДАННИ СЪБИРАМЕ?</h3>
-                    <p>Ние събираме информация, която Вие предоставяте доброволно чрез формите за контакт или при записване на час за обслужване:</p>
+        {/* 5. Споделяне */}
+        <section>
+          <h3 className='text-lg font-bold text-slate-900 mb-4 uppercase'>5. Споделяне на информацията</h3>
+          <p>Ние <span className="font-bold text-red-600 underline">не продаваме</span> Вашите данни. Споделяме ги само с доставчици на ИТ услуги/хостинг за поддръжка на сайта или с държавни органи при законово изискване.</p>
+        </section>
 
-                    <p>Идентификационни данни: Име и фамилия.</p>
+        {/* 6. Съхранение */}
+        <section>
+          <h3 className='text-lg font-bold text-slate-900 mb-4 uppercase'>6. Съхранение на данните</h3>
+          <p>Данните се съхраняват само за периода, необходим за изпълнение на Вашето запитване или съгласно законовите срокове.</p>
+        </section>
 
-                   <p> Данни за контакт: Телефонен номер и имейл адрес.</p>
+        {/* 7. GDPR Права */}
+        <section>
+          <h3 className='text-lg font-bold text-slate-900 mb-4 uppercase'>7. Вашите права по GDPR</h3>
+          <p className="mb-4">Имате право на достъп, коригиране, изтриване ("забравяне"), ограничаване на обработването и отказ от обработка по всяко време.</p>
+          <p className="font-bold">За упражняване на тези права: <a href="mailto:info@autogas-varna.com" className="text-red-600 underline ml-1">info@autogas-varna.com</a></p>
+        </section>
 
-                    <p>Технически данни: IP адрес, тип браузър и бисквитки (автоматично събирани чрез хостинг платформата и аналитични инструменти).</p>
+        {/* 8. Бисквитки */}
+        <section>
+          <h3 className='text-lg font-bold text-slate-900 mb-3 uppercase'>8. Използване на „бисквитки“</h3>
+          <p>Сайтът използва „бисквитки“ за техническа функционалност. Можете да ги управлявате чрез настройките на Вашия браузър.</p>
+        </section>
 
-                    <p>Данни за автомобила: Марка и модел (когато са предоставени в запитването за монтаж на АГУ).</p>
+        {/* 9. Промени */}
+        <footer className="pt-10 border-t border-slate-200">
+          <h3 className='text-lg font-bold text-slate-900 mb-3 uppercase'>9. Промени в политиката</h3>
+          <p className="text-sm text-slate-500">
+            Запазваме правото си да актуализираме тази политика. Всички промени ще бъдат публикувани на тази страница.
+          </p>
+        </footer>
 
-                   <h3 className='font-semibold'> 3. ЦЕЛИ НА ОБРАБОТВАНЕТО</h3>
-                   <p> Вашите данни се обработват единствено за следните цели:</p>
+      </div>
+    </div>
+  );
+};
 
-                   <p> За обработка на Вашите запитвания за цени и услуги.</p>
-
-                    <p>За записване на час за монтаж или диагностика на газова уредба.</p>
-
-                    <p>За директна комуникация относно технически въпроси по Вашия автомобил.</p>
-
-                    <p>За статистически анализ на посещенията на уебсайта.</p>
-
-                    <h3 className='font-semibold'>4. ПРАВНО ОСНОВАНИЕ ЗА ОБРАБОТКА</h3>
-                    <p>Обработваме Вашите данни въз основа на:</p>
-
-                   <p> Преддоговорни отношения: За да отговорим на Вашето запитване за услуга.</p>
-
-                    <p>Легитимен интерес: За подобряване функционалността на нашия сайт.</p>
-
-                    <p>Вашето изрично съгласие: При изпращане на съобщение чрез контактната форма.</p>
-
-                    <h3 className='font-semibold'>5. СПОДЕЛЯНЕ НА ИНФОРМАЦИЯТА</h3>
-                    <p>Ние не продаваме и не предоставяме Вашите данни на трети лица за маркетингови цели. Вашите данни могат да бъдат споделени само с:</p>
-
-                    <p>Доставчици на ИТ услуги и хостинг, необходими за техническата поддръжка на сайта.</p>
-
-                    <p>Държавни органи, само когато това е изискуемо по закон.</p>
-
-                    <h3 className='font-semibold'>6. СЪХРАНЕНИЕ НА ДАННИТЕ</h3>
-                    <p>Съхраняваме Вашите данни само за периода, необходим за изпълнение на Вашето запитване или докато законът изисква това. Данните от контактната форма се съхраняват до приключване на комуникацията, освен ако не се стигне до реална поръчка/услуга.</p>
-
-                    <h3 className='font-semibold'>7. ВАШИТЕ ПРАВА ПО GDPR</h3>
-                    <p>Като субект на данни, Вие имате право на:</p>
-
-                    <p>Достъп до Вашите лични данни.</p>
-
-                    <p>Коригиране на неточни данни.</p>
-
-                   <p> Изтриване („право да бъдеш забравен“).</p>
-
-                    <p>Ограничаване на обработването.</p>
-
-                    <p>Отказ от обработка по всяко време.</p>
-
-                    <p>За да упражните тези права, моля свържете се с нас на: info@autogas-varna.com.</p>
-
-                    <h3 className='font-semibold'>8. ИЗПОЛЗВАНЕ НА „БИСКВИТКИ“</h3>
-                   <p> Нашият сайт използва „бисквитки“ (cookies) за техническа функционалност. Можете да управлявате или изтривате бисквитките чрез настройките на Вашия браузър.</p>
-
-                   <h3 className='font-semibold'> 9. ПРОМЕНИ В ПОЛИТИКАТА</h3>
-                    <p>Запазваме правото си да актуализираме тази политика. Всички промени ще бъдат публикувани на тази страница с нова дата на актуализация.</p>
-            </section>
-        </div>
-  )
-}
-
-export default PrivacyPolicy
+export default PrivacyPolicy;

@@ -3960,6 +3960,36 @@
             "thumbnail": "/assets/cars/jeep/Jeep-Grand Cherokee-5.2/thumbnails/jeep_grandcherokee_1_b (5)_thumb.webp"
           }
         ]
+      },
+      {
+        "id": "Jeep-Wrangler",
+        "name": "Jeep-Wrangler",
+        "images": [
+          {
+            "original": "/assets/cars/jeep/Jeep-Wrangler/Jeep-Wrangler (1)_large.webp",
+            "thumbnail": "/assets/cars/jeep/Jeep-Wrangler/thumbnails/Jeep-Wrangler (1)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/jeep/Jeep-Wrangler/Jeep-Wrangler (2)_large.webp",
+            "thumbnail": "/assets/cars/jeep/Jeep-Wrangler/thumbnails/Jeep-Wrangler (2)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/jeep/Jeep-Wrangler/Jeep-Wrangler (3)_large.webp",
+            "thumbnail": "/assets/cars/jeep/Jeep-Wrangler/thumbnails/Jeep-Wrangler (3)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/jeep/Jeep-Wrangler/Jeep-Wrangler (4)_large.webp",
+            "thumbnail": "/assets/cars/jeep/Jeep-Wrangler/thumbnails/Jeep-Wrangler (4)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/jeep/Jeep-Wrangler/Jeep-Wrangler (5)_large.webp",
+            "thumbnail": "/assets/cars/jeep/Jeep-Wrangler/thumbnails/Jeep-Wrangler (5)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/jeep/Jeep-Wrangler/Jeep-Wrangler (6)_large.webp",
+            "thumbnail": "/assets/cars/jeep/Jeep-Wrangler/thumbnails/Jeep-Wrangler (6)_thumb.webp"
+          }
+        ]
       }
     ]
   },
@@ -10216,6 +10246,40 @@
         ]
       },
       {
+        "id": "Suzuki-Swace",
+        "name": "Suzuki-Swace",
+        "images": [
+          {
+            "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (1)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (1)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (2)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (2)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (3)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (3)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (4)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (4)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (5)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (5)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (6)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (6)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (7)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (7)_thumb.webp"
+          }
+        ]
+      },
+      {
         "id": "Suzuki-Swift",
         "name": "Suzuki-Swift",
         "images": [
@@ -10280,32 +10344,32 @@
         ]
       },
       {
-        "id": "vitara_1",
-        "name": "vitara 1",
+        "id": "Suzuki-Vitara",
+        "name": "Suzuki-Vitara",
         "images": [
           {
-            "original": "/assets/cars/suzuki/vitara_1/vitara_16 (1)_large.webp",
-            "thumbnail": "/assets/cars/suzuki/vitara_1/thumbnails/vitara_16 (1)_thumb.webp"
+            "original": "/assets/cars/suzuki/Suzuki-Vitara/vitara_16 (1)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Vitara/thumbnails/vitara_16 (1)_thumb.webp"
           },
           {
-            "original": "/assets/cars/suzuki/vitara_1/vitara_16 (2)_large.webp",
-            "thumbnail": "/assets/cars/suzuki/vitara_1/thumbnails/vitara_16 (2)_thumb.webp"
+            "original": "/assets/cars/suzuki/Suzuki-Vitara/vitara_16 (2)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Vitara/thumbnails/vitara_16 (2)_thumb.webp"
           },
           {
-            "original": "/assets/cars/suzuki/vitara_1/vitara_16 (3)_large.webp",
-            "thumbnail": "/assets/cars/suzuki/vitara_1/thumbnails/vitara_16 (3)_thumb.webp"
+            "original": "/assets/cars/suzuki/Suzuki-Vitara/vitara_16 (3)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Vitara/thumbnails/vitara_16 (3)_thumb.webp"
           },
           {
-            "original": "/assets/cars/suzuki/vitara_1/vitara_16 (4)_large.webp",
-            "thumbnail": "/assets/cars/suzuki/vitara_1/thumbnails/vitara_16 (4)_thumb.webp"
+            "original": "/assets/cars/suzuki/Suzuki-Vitara/vitara_16 (4)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Vitara/thumbnails/vitara_16 (4)_thumb.webp"
           },
           {
-            "original": "/assets/cars/suzuki/vitara_1/vitara_16 (5)_large.webp",
-            "thumbnail": "/assets/cars/suzuki/vitara_1/thumbnails/vitara_16 (5)_thumb.webp"
+            "original": "/assets/cars/suzuki/Suzuki-Vitara/vitara_16 (5)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Vitara/thumbnails/vitara_16 (5)_thumb.webp"
           },
           {
-            "original": "/assets/cars/suzuki/vitara_1/vitara_16 (6)_large.webp",
-            "thumbnail": "/assets/cars/suzuki/vitara_1/thumbnails/vitara_16 (6)_thumb.webp"
+            "original": "/assets/cars/suzuki/Suzuki-Vitara/vitara_16 (6)_large.webp",
+            "thumbnail": "/assets/cars/suzuki/Suzuki-Vitara/thumbnails/vitara_16 (6)_thumb.webp"
           }
         ]
       }
@@ -12028,6 +12092,36 @@
           {
             "original": "/assets/cars/volkswagen/VW-T-Roc/vw-t-roc (8)_large.webp",
             "thumbnail": "/assets/cars/volkswagen/VW-T-Roc/thumbnails/vw-t-roc (8)_thumb.webp"
+          }
+        ]
+      },
+      {
+        "id": "VW-T-Roc-2",
+        "name": "VW-T-Roc-2",
+        "images": [
+          {
+            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (1)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (1)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (2)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (2)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (3)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (3)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (4)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (4)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (5)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (5)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (6)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (6)_thumb.webp"
           }
         ]
       }
