@@ -10258,10 +10258,6 @@
             "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (2)_thumb.webp"
           },
           {
-            "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (3)_large.webp",
-            "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (3)_thumb.webp"
-          },
-          {
             "original": "/assets/cars/suzuki/Suzuki-Swace/Suzuki-Swace Hybrid (4)_large.webp",
             "thumbnail": "/assets/cars/suzuki/Suzuki-Swace/thumbnails/Suzuki-Swace Hybrid (4)_thumb.webp"
           },
@@ -12096,32 +12092,32 @@
         ]
       },
       {
-        "id": "VW-T-Roc-2",
-        "name": "VW-T-Roc-2",
+        "id": "VW-Taygo",
+        "name": "VW-Taygo",
         "images": [
           {
-            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (1)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (1)_thumb.webp"
+            "original": "/assets/cars/volkswagen/VW-Taygo/Volkswagen-Taygo (1)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Taygo/thumbnails/Volkswagen-Taygo (1)_thumb.webp"
           },
           {
-            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (2)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (2)_thumb.webp"
+            "original": "/assets/cars/volkswagen/VW-Taygo/Volkswagen-Taygo (2)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Taygo/thumbnails/Volkswagen-Taygo (2)_thumb.webp"
           },
           {
-            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (3)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (3)_thumb.webp"
+            "original": "/assets/cars/volkswagen/VW-Taygo/Volkswagen-Taygo (3)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Taygo/thumbnails/Volkswagen-Taygo (3)_thumb.webp"
           },
           {
-            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (4)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (4)_thumb.webp"
+            "original": "/assets/cars/volkswagen/VW-Taygo/Volkswagen-Taygo (4)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Taygo/thumbnails/Volkswagen-Taygo (4)_thumb.webp"
           },
           {
-            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (5)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (5)_thumb.webp"
+            "original": "/assets/cars/volkswagen/VW-Taygo/Volkswagen-Taygo (5)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Taygo/thumbnails/Volkswagen-Taygo (5)_thumb.webp"
           },
           {
-            "original": "/assets/cars/volkswagen/VW-T-Roc-2/Volkswagen-T-Roc (6)_large.webp",
-            "thumbnail": "/assets/cars/volkswagen/VW-T-Roc-2/thumbnails/Volkswagen-T-Roc (6)_thumb.webp"
+            "original": "/assets/cars/volkswagen/VW-Taygo/Volkswagen-Taygo (6)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Taygo/thumbnails/Volkswagen-Taygo (6)_thumb.webp"
           }
         ]
       }
