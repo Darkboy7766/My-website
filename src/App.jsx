@@ -16,6 +16,7 @@ const GazovInzhekcionBrc = lazy(() => import('./pages/gazov-inzhekcion-brc'));
 const GazovInzhekcionAeb = lazy(() => import('./pages/gazov-inzhekcion-aeb'));
 const GazovInzhekcionPrins = lazy(() => import('./pages/gazov-inzhekcion-prins'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const Kalkulator = lazy(() => import('./pages/kalkulator'));
 
 const App = () => {
   const location = useLocation();
@@ -120,6 +121,8 @@ const App = () => {
             <Route path="/gazov-inzhekcion-aeb" element={<GazovInzhekcionAeb />} />
 
             <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+
+            <Route path="/kalkulator" element={<Kalkulator />} />
 
           </Routes>
           </Suspense>
