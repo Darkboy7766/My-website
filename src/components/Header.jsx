@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail, Clock8, Phone, Smartphone } from 'lucide-react';
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import { useLenis } from "lenis/react";
 
 const Header = () => {
+    const lenis = useLenis();
     const navLinks = [
         { name: 'Начало', path: '/' },
         { name: 'Цени', path: '/tseni-gazov-inzhekcion' },
@@ -107,9 +109,9 @@ const Header = () => {
                 ${isScrolled ? "bg-white/95 py-3 shadow-md" : "bg-transparent py-4 text-white"}`}
             > 
                 {/* Logo Section */}
-                <Link 
-                    to="/" 
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+                <Link
+                    to="/"
+                    onClick={() => lenis?.scrollTo(0)}
                     className="flex flex-col items-start group no-underline outline-none"
                 >
                     <div className="flex items-center space-x-1">
@@ -159,7 +161,7 @@ const Header = () => {
 
                 {/* Mobile Hamburger */}
                 <div className="md:hidden flex items-center">
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative w-8 h-6 flex flex-col justify-between items-center focus:outline-none z-100" aria-label="Отвори менюто">
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative w-8 h-6 flex flex-col justify-between items-center focus:outline-none z-100" aria-label={isMenuOpen ? "Затвори менюто" : "Отвори менюто"} aria-expanded={isMenuOpen}>
                         <span className={`w-full h-1 rounded-full transition-all duration-300 origin-left ${isMenuOpen ? "rotate-45 bg-slate-950" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
                         <span className={`w-full h-1 rounded-full transition-all duration-300 ${isMenuOpen ? "opacity-0" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />
                         <span className={`w-full h-1 rounded-full transition-all duration-300 origin-left ${isMenuOpen ? "-rotate-45 bg-slate-950" : (isScrolled ? "bg-slate-950" : "bg-white")}`} />

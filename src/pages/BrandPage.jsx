@@ -29,7 +29,12 @@ const BrandPage = () => {
     </div>
   );
 
-  if (!brand) return {/* запазваш си логиката за грешка */};
+  if (!brand) return (
+    <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-slate-50">
+      <p className="text-slate-500 text-lg font-medium">Марката не е намерена.</p>
+      <Link to="/galeriya" className="text-sm text-red-600 font-bold hover:underline">← Назад към Галерия</Link>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-slate-50">

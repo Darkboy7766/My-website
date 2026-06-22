@@ -1,10 +1,9 @@
-import { react, useEffect } from 'react';
+import { useEffect } from 'react';
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import About from '../components/About'
 import Faq from '../components/Faq'
 import Services from '../components/Services'
-import Header from '../components/Header'
 import { useLocation } from 'react-router-dom';
 
 const Home = () => {
@@ -141,7 +140,6 @@ useEffect(() => {
     })}
   </script>
 
-      <Header />
       <div id="hero"><Hero /></div>
       <div id="about"><About /></div>
       <div id="services"><Services /></div>

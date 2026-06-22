@@ -28,7 +28,7 @@
 html, body {
   max-width: 100%;
   position: relative;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth е премахнато — Lenis управлява плавния скрол */
 }
 
 html.lenis {

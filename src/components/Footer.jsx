@@ -1,11 +1,13 @@
 import React from 'react'
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react'
+import { useLenis } from 'lenis/react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
   const location = useLocation();
+  const lenis = useLenis();
 
   const handleFooterClick = (e, sectionId) => {
     // 1. Ако секцията е на текущата страница
@@ -35,7 +37,7 @@ const Footer = () => {
           
           {/* Колона 1: Лого и Описание */}
           <div className="space-y-6">
-            <Link to="/" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="flex flex-col items-start group no-underline">
+            <Link to="/" onClick={() => lenis?.scrollTo(0)} className="flex flex-col items-start group no-underline">
               <div className="flex items-center space-x-1">
                 <span className="text-2xl font-black tracking-tighter text-white transition-colors group-hover:text-red-500 drop-shadow-[0_2px_2px_rgba(255,255,255,0.1)]">
                   АУТОГАЗ

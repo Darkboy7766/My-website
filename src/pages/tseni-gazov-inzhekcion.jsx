@@ -8,11 +8,10 @@ import Footer from '../components/Footer'
 
 const TseniGazovInzhekcion = () => {
   return (
-    <div>
-
+    <>
       <title>Цени за Газов Инжекцион Варна | Автогаз Сервиз</title>
       <meta name="description" content="Вижте нашите цени за монтаж на газов инжекцион, диагностика и обслужване във Варна. Предлагаме системи за 4, 6 и 8 цилиндъра с гаранция и опция на изплащане." />
-      <link rel="canonical" href="https://autogas-varna.com/prices" />
+      <link rel="canonical" href="https://autogas-varna.com/tseni-gazov-inzhekcion" />
 
       <script type="application/ld+json">
         {JSON.stringify({
@@ -30,12 +29,14 @@ const TseniGazovInzhekcion = () => {
                   "name": "Монтаж на газов инжекцион"
                 },
                 "priceCurrency": "EUR",
-                "price": "715.00" // Примерна цена
+                "price": "715.00"
               }
             ]
           }
         })}
       </script>
+
+      <div>
 
       <Promo
         title="Цени на газови уредби"
@@ -87,8 +88,8 @@ const TseniGazovInzhekcion = () => {
 
       <PriceCard />
       <Footer />
-
-    </div>
+      </div>
+    </>
   )
 }
 

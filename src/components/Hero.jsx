@@ -1,11 +1,11 @@
 import React from 'react';
 import { assets } from '../assets/assets';
-import { motion } from 'motion/react'; // Увери се, че импортът съвпада с твоята инсталация
+import { motion } from 'motion/react';
 import { MoveRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className='relative flex flex-col items-start justify-center px-5 md:px-16 lg:px-24 xl:px-32 text-white bg-[url("/src/assets/09copy.webp")] bg-no-repeat bg-cover bg-center h-screen overflow-hidden'>
+    <div className='relative flex flex-col items-start justify-center px-5 md:px-16 lg:px-24 xl:px-32 text-white bg-no-repeat bg-cover bg-center h-screen overflow-hidden' style={{ backgroundImage: 'url(/assets/hero-bg.webp)' }}>
       
       {/* Overlay за по-добър контраст */}
       <div className="absolute inset-0 bg-black/40 z-0"></div>
