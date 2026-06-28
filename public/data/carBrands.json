@@ -6357,6 +6357,36 @@
     "logo": "/assets/logos/mini.png",
     "models": [
       {
+        "id": "Mini-Cooper",
+        "name": "Mini-Cooper",
+        "images": [
+          {
+            "original": "/assets/cars/mini/Mini-Cooper/mini_cooper (1)_large.webp",
+            "thumbnail": "/assets/cars/mini/Mini-Cooper/thumbnails/mini_cooper (1)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/mini/Mini-Cooper/mini_cooper (2)_large.webp",
+            "thumbnail": "/assets/cars/mini/Mini-Cooper/thumbnails/mini_cooper (2)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/mini/Mini-Cooper/mini_cooper (3)_large.webp",
+            "thumbnail": "/assets/cars/mini/Mini-Cooper/thumbnails/mini_cooper (3)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/mini/Mini-Cooper/mini_cooper (4)_large.webp",
+            "thumbnail": "/assets/cars/mini/Mini-Cooper/thumbnails/mini_cooper (4)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/mini/Mini-Cooper/mini_cooper (5)_large.webp",
+            "thumbnail": "/assets/cars/mini/Mini-Cooper/thumbnails/mini_cooper (5)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/mini/Mini-Cooper/mini_cooper (6)_large.webp",
+            "thumbnail": "/assets/cars/mini/Mini-Cooper/thumbnails/mini_cooper (6)_thumb.webp"
+          }
+        ]
+      },
+      {
         "id": "Mini-Cooper-S1.6K",
         "name": "Mini-Cooper-S1.6K",
         "images": [
@@ -10525,6 +10555,44 @@
         ]
       },
       {
+        "id": "Toyota-Avensis-4",
+        "name": "Toyota-Avensis-4",
+        "images": [
+          {
+            "original": "/assets/cars/toyota/Toyota-Avensis-4/toyota_avensis (1)_large.webp",
+            "thumbnail": "/assets/cars/toyota/Toyota-Avensis-4/thumbnails/toyota_avensis (1)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/toyota/Toyota-Avensis-4/toyota_avensis (2)_large.webp",
+            "thumbnail": "/assets/cars/toyota/Toyota-Avensis-4/thumbnails/toyota_avensis (2)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/toyota/Toyota-Avensis-4/toyota_avensis (3)_large.webp",
+            "thumbnail": "/assets/cars/toyota/Toyota-Avensis-4/thumbnails/toyota_avensis (3)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/toyota/Toyota-Avensis-4/toyota_avensis (4)_large.webp",
+            "thumbnail": "/assets/cars/toyota/Toyota-Avensis-4/thumbnails/toyota_avensis (4)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/toyota/Toyota-Avensis-4/toyota_avensis (5)_large.webp",
+            "thumbnail": "/assets/cars/toyota/Toyota-Avensis-4/thumbnails/toyota_avensis (5)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/toyota/Toyota-Avensis-4/toyota_avensis (6)_large.webp",
+            "thumbnail": "/assets/cars/toyota/Toyota-Avensis-4/thumbnails/toyota_avensis (6)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/toyota/Toyota-Avensis-4/toyota_avensis (7)_large.webp",
+            "thumbnail": "/assets/cars/toyota/Toyota-Avensis-4/thumbnails/toyota_avensis (7)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/toyota/Toyota-Avensis-4/toyota_avensis (8)_large.webp",
+            "thumbnail": "/assets/cars/toyota/Toyota-Avensis-4/thumbnails/toyota_avensis (8)_thumb.webp"
+          }
+        ]
+      },
+      {
         "id": "Toyota-Celica-1",
         "name": "Toyota-Celica-1",
         "images": [
@@ -11536,6 +11604,52 @@
           {
             "original": "/assets/cars/volkswagen/VW-Golf-10/GOLF-1.4 (6)_large.webp",
             "thumbnail": "/assets/cars/volkswagen/VW-Golf-10/thumbnails/GOLF-1.4 (6)_thumb.webp"
+          }
+        ]
+      },
+      {
+        "id": "VW-Golf-11",
+        "name": "VW-Golf-11",
+        "images": [
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (1)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (1)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (10)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (10)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (2)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (2)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (3)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (3)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (4)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (4)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (5)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (5)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (6)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (6)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (7)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (7)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (8)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (8)_thumb.webp"
+          },
+          {
+            "original": "/assets/cars/volkswagen/VW-Golf-11/volkswagen_golf_8 (9)_large.webp",
+            "thumbnail": "/assets/cars/volkswagen/VW-Golf-11/thumbnails/volkswagen_golf_8 (9)_thumb.webp"
           }
         ]
       },
