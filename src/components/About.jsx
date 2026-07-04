@@ -50,7 +50,9 @@ const About = () => {
               className="w-full h-auto object-cover rounded-2xl"
               src={assets.banner}
               alt="Сервиз за монтаж на газов инжекцион - Аутогаз Варна"
-              loading="lazy" 
+              width={855}
+              height={512}
+              loading="lazy"
             />
           </div>
           {/* Декоративни елементи, които препращат към Hero секцията */}

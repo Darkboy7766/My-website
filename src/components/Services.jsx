@@ -13,6 +13,8 @@ const Services = () => {
       subtitle: "Италианско Качество и Иновации",
       desc: "Като официални партньори, предлагаме най-новите решения от италианския лидер. Синоним на надеждност и дългосрочна експлоатация.",
       width: "w-32",
+      imgWidth: 149,
+      imgHeight: 111,
       accent: "from-blue-600 to-indigo-600",
       alt: "BRC газов инжекцион от Аутогаз-Варна",
     },
@@ -23,6 +25,8 @@ const Services = () => {
       subtitle: "Холандска Прецизност",
       desc: "Сертифициран монтаж на Prins - холандската марка, известна със своите високотехнологични решения за двигатели с директно впръскване.",
       width: "w-36",
+      imgWidth: 450,
+      imgHeight: 288,
       accent: "from-indigo-600 to-purple-600",
       alt: "Prins газов инжекцион от Аутогаз-Варна",
     },
@@ -33,6 +37,8 @@ const Services = () => {
       subtitle: "Проверено Европейско Качество",
       desc: "Италиански производител с богата история. Техните системи предлагат оптимално съчетание между цена и качество за всеки автомобил.",
       width: "w-36",
+      imgWidth: 450,
+      imgHeight: 256,
       accent: "from-blue-500 to-cyan-500",
       alt: "AEB газов инжекцион от Аутогаз-Варна",
     }
@@ -63,9 +69,11 @@ const Services = () => {
             <div className="h-24 flex items-start mb-8">
               <motion.img 
                 whileHover={{ scale: 1.1 }}
-                className={`${brand.width} grayscale group-hover:grayscale-0 transition-all duration-700 object-contain drop-shadow-sm`} 
-                src={brand.img} 
-                alt={brand.title} 
+                className={`${brand.width} grayscale group-hover:grayscale-0 transition-all duration-700 object-contain drop-shadow-sm`}
+                src={brand.img}
+                alt={brand.title}
+                width={brand.imgWidth}
+                height={brand.imgHeight}
               />
             </div>
             

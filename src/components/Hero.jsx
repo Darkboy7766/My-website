@@ -11,8 +11,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/40 z-0"></div>
 
       <motion.div layout
-        initial={{ opacity: 0, x: -50 }} 
-        animate={{ opacity: 1, x: 0 }}    
+        initial={{ x: -50 }}
+        animate={{ x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className='relative z-10 bg-black/20 backdrop-blur-sm w-auto p-6 mt-16 md:mt-25 sm:mt-10 rounded-2xl border border-white/10 shadow-2xl'
       >
@@ -36,17 +36,11 @@ const Hero = () => {
           </p>
         </motion.a>
 
-        {/* Анимирано заглавие */}
-        <motion.div layout
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          <h1 className="text-start text-4xl leading-tight md:text-6xl font-bold max-w-4xl drop-shadow-2xl">
-            Монтаж и сервиз на <br />
-            <span className="text-indigo-400">автомобилни газови уредби.</span>
-          </h1>
-        </motion.div>
+        {/* Заглавието е LCP елементът – рендира се без анимация, за да се брои за нарисувано веднага */}
+        <h1 className="text-start text-4xl leading-tight md:text-6xl font-bold max-w-4xl drop-shadow-2xl">
+          Монтаж и сервиз на <br />
+          <span className="text-indigo-400">автомобилни газови уредби.</span>
+        </h1>
 
         {/* НОВИЯТ СЕКЦИЯ СЪС СТАТИСТИКИ */}
         <div className="flex flex-col md:flex-row gap-6 mt-8">
