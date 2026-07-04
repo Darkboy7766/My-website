@@ -10,6 +10,7 @@ const Header = () => {
         { name: 'Начало', path: '/' },
         { name: 'Цени', path: '/tseni-gazov-inzhekcion' },
         { name: 'Галерия', path: '/galeriya' },
+        { name: 'Бутилки', path: '/smyana-gazova-butilka' },
         { name: 'Контакти', path: '/kontakti' },
     ];
 

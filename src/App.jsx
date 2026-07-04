@@ -16,6 +16,7 @@ const GazovInzhekcionAeb = lazy(() => import('./pages/gazov-inzhekcion-aeb'));
 const GazovInzhekcionPrins = lazy(() => import('./pages/gazov-inzhekcion-prins'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const Kalkulator = lazy(() => import('./pages/kalkulator'));
+const SmyanaGazovaButilka = lazy(() => import('./pages/smyana-gazova-butilka'));
 
 const App = () => {
   const location = useLocation();
@@ -59,6 +60,7 @@ const App = () => {
                 <Route path="/gazov-inzhekcion-aeb" element={<GazovInzhekcionAeb />} />
                 <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                 <Route path="/kalkulator" element={<Kalkulator />} />
+                <Route path="/smyana-gazova-butilka" element={<SmyanaGazovaButilka />} />
               </Routes>
             </Suspense>
           </main>
