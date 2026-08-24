@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Promo from '../components/Promo.jsx';
+import BrandCard from '../components/BrandCard.astro';
+import Footer from '../components/Footer.astro';
+import carBrands from '../../public/data/carBrands.json';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: 'Проекти на Аутогаз Варна',
+    description: 'Снимки на монтирани газови уредби и инжекциони на различни модели автомобили.',
+    creator: { '@type': 'LocalBusiness', name: 'Аутогаз Варна' },
+  },
+];
+---
+<Layout
+  title="Галерия с монтажи на газов инжекцион във Варна | Аутогаз Варна"
+  description="Разгледайте снимки от нашия сервиз във Варна: монтаж на газови инжекциони, подредба на компоненти и завършени автомобили. Вижте качеството на нашата работа!"
+  jsonLd={jsonLd}
+>
+  <main class="bg-slate-50 min-h-screen">
+    <Promo
+      client:visible
+      title="Монтажи от сервиза на Аутогаз-Варна"
+      subTitle="Вижте прецизния монтаж и вниманието към детайла при всяка инсталирана система."
+    />
+
+    <section class="container mx-auto px-4 py-20">
+      <div class="mb-12 text-left">
+        <h3 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter uppercase">
+          Галерия <span class="text-red-600 underline decoration-2 underline-offset-8">Монтажи</span>
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+        {carBrands.map((brand) => (
+          <BrandCard brand={brand} />
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Promo from '../components/Promo.jsx';
+import CalculatorPromoBanner from '../components/CalculatorPromoBanner.jsx';
+import PriceCard from '../components/PriceCard.jsx';
+import Footer from '../components/Footer.astro';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Ценоразпис на услугите - Аутогаз Варна',
+    mainEntity: {
+      '@type': 'OfferCatalog',
+      name: 'Автогаз Услуги',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: 'Монтаж на газов инжекцион' },
+          priceCurrency: 'EUR',
+          price: '715.00',
+        },
+      ],
+    },
+  },
+];
+---
+<Layout
+  title="Цени за Газов Инжекцион Варна | Автогаз Сервиз"
+  description="Вижте нашите цени за монтаж на газов инжекцион, диагностика и обслужване във Варна. Предлагаме системи за 4, 6 и 8 цилиндъра с гаранция и опция на изплащане."
+  jsonLd={jsonLd}
+>
+  <main>
+    <Promo
+      client:visible
+      title="Цени на газови уредби"
+      subTitle="Прозрачни цени без скрити такси. Вашата газова уредба се изплаща за броени месеци."
+    />
+    <CalculatorPromoBanner client:visible />
+    <PriceCard client:visible />
+  </main>
+  <Footer />
+</Layout>

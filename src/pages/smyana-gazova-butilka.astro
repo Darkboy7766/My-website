@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Promo from '../components/Promo.jsx';
+import SmyanaGazovaButilka from '../components/SmyanaGazovaButilka.jsx';
+import Footer from '../components/Footer.astro';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Смяна на газова бутилка',
+    provider: {
+      '@type': 'AutoRepair',
+      name: 'Аутогаз Варна',
+      address: { '@type': 'PostalAddress', addressLocality: 'Варна', addressCountry: 'BG' },
+    },
+    description: 'Подмяна на газова бутилка за автомобил след изтичане на 10-годишния срок на експлоатация. Сертифицирани бутилки по ECE R67-01 с актуализация на документи.',
+    areaServed: 'Варна и региона',
+  },
+];
+---
+<Layout
+  title="Смяна на Газова Бутилка след 10 Години | Аутогаз Варна"
+  description="Изтича ли 10-годишният срок на газовата ви бутилка? Предлагаме сертифициран монтаж на нова бутилка по ECE R67 с актуализация на документи. Варна и региона."
+  jsonLd={jsonLd}
+>
+  <main>
+    <Promo
+      client:visible
+      title="Смяна на газова бутилка"
+      subTitle="10 години изтекоха? Подменете бутилката навреме – за ваша безопасност и безпроблемен технически преглед."
+    />
+    <SmyanaGazovaButilka client:visible />
+  </main>
+  <Footer />
+</Layout>

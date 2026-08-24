@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://autogas-varna.com/sitemap.xml
+Sitemap: https://autogas-varna.com/sitemap-index.xml

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useInView } from "motion/react";
 
 const Counter = ({ value, title, suffix = "+" }) => {
@@ -25,7 +25,7 @@ const Counter = ({ value, title, suffix = "+" }) => {
   }, [springValue]);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -46,7 +46,6 @@ const Stats = () => {
   return (
     <section className=" bg-gray-50 text-slate-900 px-5">
       <div className="max-w-6xl mx-auto">
-        {/* Кратко заглавие за контекст */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Лидер в газовите системи

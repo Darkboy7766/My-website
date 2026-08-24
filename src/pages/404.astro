@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Страницата не е намерена | Аутогаз Варна"
+  description="Търсената страница не съществува."
+>
+  <main class="min-h-screen flex flex-col items-center justify-center gap-6 bg-slate-50 px-6 text-center pt-24">
+    <h1 class="text-6xl font-black text-slate-900">404</h1>
+    <p class="text-slate-500 text-lg">Търсената страница не беше намерена.</p>
+    <a href="/" class="px-6 py-3 bg-red-600 text-white rounded-full font-bold hover:bg-red-700 transition-colors">
+      Обратно към началото
+    </a>
+  </main>
+  <Footer />
+</Layout>

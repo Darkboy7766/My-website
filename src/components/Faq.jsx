@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Title from "./Title";
 import { ChevronDown, HelpCircle } from "lucide-react";
-import { Link } from 'react-router-dom';
 
 const FAQItem = ({ question, answer, isOpen, toggleOpen }) => {
   return (
-    <div 
+    <div
       className={`mb-4 rounded-2xl transition-all duration-300 border ${
         isOpen ? "bg-white border-indigo-100 shadow-md" : "bg-slate-50 border-transparent"
       }`}
@@ -82,12 +81,12 @@ const FAQ = () => {
     <section className="py-10 bg-white px-5 relative">
       <div className="max-w-4xl mx-auto relative z-10">
 
-        <Title 
-          title="Въпроси и Отговори" 
-          subTitle="Всичко, което трябва да знаете за преминаването на алтернативно гориво." 
+        <Title
+          title="Въпроси и Отговори"
+          subTitle="Всичко, което трябва да знаете за преминаването на алтернативно гориво."
         />
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -104,21 +103,19 @@ const FAQ = () => {
           ))}
         </motion.div>
 
-        {/* Допълнителен CTA блок */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-16 p-8 rounded-4xl bg-indigo-600 text-center text-white shadow-xl shadow-indigo-200"
         >
           <h3 className="text-xl font-bold mb-2">Имате друг въпрос?</h3>
           <p className="text-indigo-100 mb-6 text-sm">Нашите експерти са на Ваше разположение за безплатна консултация.</p>
-          <Link to="/kontakti" className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-indigo-50 transition-colors">
+          <a href="/kontakti" className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-indigo-50 transition-colors">
             Свържи се с нас
-          </Link>
+          </a>
         </motion.div>
       </div>
 
-      {/* Фон декор */}
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-50 rounded-full blur-3xl -z-10 opacity-60"></div>
     </section>
   );

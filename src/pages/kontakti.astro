@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Promo from '../components/Promo.jsx';
+import Location from '../components/Location.jsx';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Аутогаз Варна | Адрес и Контакти на сервиза за АГУ"
+  description="Свържете се с нас за професионален монтаж на АГУ във Варна. Над 20 години опит, диагностика и ремонт на газови уредби."
+>
+  <main>
+    <Promo
+      client:visible
+      title="Запазете Час"
+      subTitle="Намерете ни във Варна или се свържете с нас за безплатна консултация още днес."
+    />
+    <Location client:visible />
+  </main>
+  <Footer />
+</Layout>

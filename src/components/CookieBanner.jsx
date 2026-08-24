@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const CookieBanner = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -30,12 +29,12 @@ const CookieBanner = () => {
                 <p className="text-sm max-w-3xl">
                     Този сайт използва бисквитки за подобряване на потребителското изживяване.
                     Вижте нашата{' '}
-                    <Link
-                        to="/PrivacyPolicy"
+                    <a
+                        href="/PrivacyPolicy"
                         className="text-red-600 font-bold hover:underline underline-offset-4"
                     >
                         Политика за поверителност
-                    </Link>.
+                    </a>.
                 </p>
                 <div className="flex gap-3 shrink-0">
                     <button

@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.jsx';
+import Footer from '../components/Footer.astro';
+import { assets } from '../assets/assets';
+---
+<Layout
+  title="BRC Газов Инжекцион Варна | Официален Сервиз"
+  description="Монтаж на BRC газови инжекциони във Варна. Официален партньор с гаранция за качество и надеждна сервизна мрежа."
+>
+  <main class="min-h-screen bg-white pt-24 pb-16 px-5">
+    <Title client:visible title="Газов инжекцион BRC" subTitle="" />
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
+        <div class="flex-1">
+          <h1 class="text-3xl md:text-4xl font-black text-red-600 tracking-tighter uppercase">
+            BRC <span class="text-slate-900 lowercase underline decoration-2 underline-offset-8">Gas Equipment</span> <br/>
+            <span class="text-slate-700 text-2xl">Световният еталон за качество</span>
+          </h1>
+          <p class="text-lg text-slate-600 leading-relaxed mb-8">
+            BRC е световен лидер в разработката на компоненти за пропан-бутан. Системите им са известни с това, че са „затворен тип" – всичко се произвежда от един производител, което гарантира 100% съвместимост и безпроблемна работа.
+          </p>
+          <div class="flex gap-4">
+            <span class="bg-slate-100 text-indigo-700 px-4 py-2 rounded-full font-bold text-sm decoration-2">OEM Качество</span>
+            <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-full font-bold text-sm">Сервизна мрежа</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <img src={assets.BRC_SWITCH} alt="BRC Logo" class="w-64 mx-auto drop-shadow-xl" />
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10 mb-20">
+        <div class="bg-slate-50 p-8 rounded-4xl border border-slate-100 shadow-inner">
+          <h3 class="text-2xl font-bold mb-6">Защо да изберете BRC?</h3>
+          <ul class="space-y-4 text-slate-700">
+            <li class="flex items-start gap-3">
+              <span class="text-blue-600 font-bold">01.</span>
+              <p><strong>Интегриран софтуер:</strong> Директна комуникация с бензиновия компютър чрез OBDII за прецизна смес.</p>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-blue-600 font-bold">02.</span>
+              <p><strong>Високопроизводителни инжектори:</strong> Инжекторите BRC IN03 са едни от най-износоустойчивите в индустрията.</p>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-blue-600 font-bold">03.</span>
+              <p><strong>Гаранция:</strong> Пълна поддръжка и лесно обслужване в цяла Европа.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-4xl overflow-hidden shadow-2xl bg-slate-200">
+          <img src={assets.Sequent_32} alt="BRC Kit" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/tseni-gazov-inzhekcion" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-all shadow-lg">
+          Вижте цените за монтаж на BRC
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

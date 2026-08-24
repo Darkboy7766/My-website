@@ -1,11 +1,9 @@
-import React from 'react'
 import { motion } from 'motion/react'
 
 const TitleH3 = ({ title, subTitle }) => {
   return (
     <div className='text-center my-10 overflow-hidden'>
-      {/* Основното заглавие - изплува отдолу нагоре */}
-      <motion.h3 
+      <motion.h3
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -15,8 +13,7 @@ const TitleH3 = ({ title, subTitle }) => {
         {title}
       </motion.h3>
 
-      {/* Декоративната линия - разпъва се от центъра настрани */}
-      <motion.div 
+      <motion.div
         initial={{ width: 0, opacity: 0 }}
         whileInView={{ width: "80px", opacity: 1 }}
         viewport={{ once: true }}
@@ -24,9 +21,8 @@ const TitleH3 = ({ title, subTitle }) => {
         className='h-1.5 bg-indigo-600 mx-auto rounded-full mb-6'
       ></motion.div>
 
-      {/* Подзаглавието - появява се плавно след линията */}
       {subTitle && (
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

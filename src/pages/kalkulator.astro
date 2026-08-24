@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Kalkulator from '../components/Kalkulator.jsx';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Калкулатор за спестявания от газова уредба | Аутогаз Варна"
+  description="Изчислете за колко километра ще се изплати газовата уредба на вашия автомобил спрямо разхода на бензин."
+>
+  <main>
+    <Kalkulator client:load />
+  </main>
+  <Footer />
+</Layout>

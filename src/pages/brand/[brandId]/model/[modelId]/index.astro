@@ -1,0 +1,87 @@
+---
+import Layout from '../../../../../layouts/Layout.astro';
+import Promo from '../../../../../components/Promo.jsx';
+import ImageGallery from '../../../../../components/ImageGallery.jsx';
+import Footer from '../../../../../components/Footer.astro';
+import carBrands from '../../../../../../public/data/carBrands.json';
+
+export function getStaticPaths() {
+  return carBrands.flatMap((brand) =>
+    brand.models
+      // Пропускаме модели без обработени снимки (виж бележката в brand/[brandId]/index.astro).
+      .filter((model) => model.images.length > 0)
+      .map((model) => ({
+        params: { brandId: brand.id, modelId: model.id },
+        props: { brand, model },
+      }))
+  );
+}
+
+const { brand, model } = Astro.props;
+---
+<Layout
+  title={`${brand.name} ${model.name} — монтаж на газов инжекцион | Аутогаз Варна`}
+  description={`Снимки от монтаж на газов инжекцион на ${brand.name} ${model.name}. ${model.images.length} снимки от реализиран проект на Аутогаз-Варна.`}
+>
+  <main class="min-h-screen bg-slate-50">
+
+    <Promo
+      client:visible
+      title={` ${model.name}`}
+      subTitle="Детайлен преглед на инсталираната газова система и компоненти."
+    />
+
+    <section class="bg-white border-b border-slate-200 shadow-sm relative overflow-hidden">
+      <div class="absolute right-0 top-0 text-[120px] font-black text-slate-50 select-none leading-none translate-x-1/4 -translate-y-1/4 uppercase italic">
+        {brand.name}
+      </div>
+
+      <div class="container relative mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="px-4 py-1.5 text-xs font-black bg-red-600 text-white rounded-full uppercase tracking-widest">
+                {brand.name}
+              </span>
+              <div class="flex items-center gap-2 text-slate-400 text-sm font-medium uppercase tracking-widest">
+                <span>{model.images.length} Снимки</span>
+              </div>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase italic">
+              {model.name}
+            </h1>
+            <div class="h-1.5 w-24 bg-red-600 mt-4"></div>
+          </div>
+
+          <a
+            href={`/brand/${brand.id}`}
+            class="group flex items-center gap-3 self-start md:self-center px-6 py-3 border-2 border-slate-900 text-slate-900 rounded-full hover:bg-slate-900 hover:text-white transition-all duration-300 font-bold uppercase text-xs tracking-widest"
+          >
+            ← Всички модели {brand.name}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-16">
+      <div class="bg-white p-4 md:p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-100">
+        <ImageGallery client:load images={model.images} modelName={model.name} />
+      </div>
+
+      <div class="mt-12 p-8 bg-slate-800 rounded-3xl text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="text-xl font-bold mb-2">Харесва ли Ви този монтаж?</h4>
+          <p class="text-slate-400">Свържете се с нас за консултация и оферта за Вашия автомобил.</p>
+        </div>
+        <a
+          href="/kontakti"
+          class="px-8 py-4 bg-indigo-500 hover:bg-indigo-600 text-white font-black uppercase tracking-widest rounded-xl transition-colors shadow-lg shadow-red-600/20"
+        >
+          Запитване за монтаж
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Mail, Clock8, Phone, Smartphone } from 'lucide-react';
 import { motion } from "motion/react";
-import { useLenis } from "lenis/react";
 
-const Header = () => {
-    const lenis = useLenis();
+const Header = ({ currentPath = '/' }) => {
     const navLinks = [
         { name: 'Начало', path: '/' },
         { name: 'Цени', path: '/tseni-gazov-inzhekcion' },
@@ -16,25 +13,11 @@ const Header = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const location = useLocation();
-    const navigate = useNavigate();
 
-    const handleActionClick = (e) => {
-        if (location.pathname === '/kontakti') {
+    const handleLogoClick = (e) => {
+        if (currentPath === '/') {
             e.preventDefault();
-            setIsMenuOpen(false);
-            const contactSection = document.getElementById('contact-form-section');
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        } else {
-            navigate('/kontakti');
-            setTimeout(() => {
-                const contactSection = document.getElementById('contact-form-section');
-                if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }, 100);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
@@ -45,7 +28,7 @@ const Header = () => {
                 setIsScrolled(true);
                 return;
             }
-            if (location.pathname !== '/') {
+            if (currentPath !== '/') {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(window.scrollY > 10);
@@ -59,7 +42,7 @@ const Header = () => {
             window.removeEventListener("scroll", handleScroll);
             window.removeEventListener("resize", handleScroll);
         };
-    }, [location.pathname]);
+    }, [currentPath]);
 
     const pulseVariants = {
         active: {
@@ -71,10 +54,9 @@ const Header = () => {
 
     return (
         <header className="fixed top-0 left-0 w-full z-9999 transition-all duration-300">
-            {/* TOPBAR - Коригиран за 3 номера */}
+            {/* TOPBAR */}
             <div className={`hidden md:flex w-full px-4 lg:px-10 font-medium text-[11px] lg:text-xs bg-white text-slate-800 border-b border-gray-100 transition-all duration-500 ease-in-out items-center justify-between ${isScrolled ? "h-0 py-0 opacity-0 overflow-hidden" : "h-10 opacity-100"}`} >
-                
-                {/* Лява част: Време и Имейл */}
+
                 <div className="flex items-center gap-4 shrink-0">
                     <div className="flex items-center gap-1.5">
                         <Clock8 size={14} className="text-red-600 shrink-0" />
@@ -85,8 +67,7 @@ const Header = () => {
                         <a href="mailto:info@autogas-varna.com" className="hover:text-red-600 transition-colors whitespace-nowrap">info@autogas-varna.com</a>
                     </div>
                 </div>
-                
-                {/* Дясна част: 3-те Телефона */}
+
                 <div className="flex items-center gap-3 lg:gap-5 shrink-0 ml-4">
                     <div className="flex items-center gap-1">
                         <Phone size={13} className="text-red-600 shrink-0" />
@@ -104,15 +85,14 @@ const Header = () => {
             </div>
 
             {/* MAIN NAVBAR */}
-            <nav 
+            <nav
                 aria-label="Основна навигация"
-                className={`w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-300 
+                className={`w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-300
                 ${isScrolled ? "bg-white/95 py-3 shadow-md" : "bg-transparent py-4 text-white"}`}
-            > 
-                {/* Logo Section */}
-                <Link
-                    to="/"
-                    onClick={() => lenis?.scrollTo(0)}
+            >
+                <a
+                    href="/"
+                    onClick={handleLogoClick}
                     className="flex flex-col items-start group no-underline outline-none"
                 >
                     <div className="flex items-center space-x-1">
@@ -127,37 +107,37 @@ const Header = () => {
                     <span className={`text-[8px] lg:text-[10px] uppercase tracking-[0.3em] font-medium transition-colors duration-300 ${isScrolled ? 'text-slate-500' : 'text-slate-300'} group-hover:text-red-500`}>
                         Professional Gas Systems
                     </span>
-                </Link>
+                </a>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-4 lg:gap-8">
                     <ul className="flex items-center gap-4 lg:gap-8 list-none m-0 p-0">
                         {navLinks.map((link, i) => (
                             <li key={i}>
-                                <Link 
-                                    to={link.path}
+                                <a
+                                    href={link.path}
                                     className={`group flex flex-col gap-0.5 font-medium transition-colors ${isScrolled ? "text-slate-950" : "text-white"}`}
                                 >
                                     {link.name}
-                                    <div className={`${isScrolled ? "bg-red-600" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300 ${location.pathname === link.path ? "w-full" : ""}`} />
-                                </Link>
+                                    <div className={`${isScrolled ? "bg-red-600" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300 ${currentPath === link.path ? "w-full" : ""}`} />
+                                </a>
                             </li>
                         ))}
                     </ul>
-                    
-                    <Link to="/kontakti" onClick={handleActionClick}>
-                        <motion.div 
+
+                    <a href="/kontakti#contact-form-section">
+                        <motion.div
                             variants={pulseVariants}
                             animate={isScrolled ? "active" : "stop"}
                             whileHover={{ scale: 1.05 }}
                             className={`px-6 py-2 text-sm font-bold rounded-full transition-all border
-                            ${isScrolled 
-                                ? "border-red-600 text-red-600 shadow-lg shadow-red-500/10" 
+                            ${isScrolled
+                                ? "border-red-600 text-red-600 shadow-lg shadow-red-500/10"
                                 : "border-white text-white hover:bg-white hover:text-slate-900"}`}
                         >
                             ЗАПАЗИ ЧАС
                         </motion.div>
-                    </Link>
+                    </a>
                 </div>
 
                 {/* Mobile Hamburger */}
@@ -170,34 +150,34 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Overlay */}
-                <div 
+                <div
                     aria-hidden={!isMenuOpen}
-                    className={`fixed inset-0 w-full h-screen bg-white text-slate-950 flex flex-col items-center justify-center gap-8 transition-all duration-500 z-90 
+                    className={`fixed inset-0 w-full h-screen bg-white text-slate-950 flex flex-col items-center justify-center gap-8 transition-all duration-500 z-90
                     ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
                 >
                     <ul className="flex flex-col items-center gap-8 font-bold text-2xl" role="list">
                         {navLinks.map((link, i) => (
                             <li key={i}>
-                                <Link 
-                                    to={link.path} 
+                                <a
+                                    href={link.path}
                                     onClick={() => setIsMenuOpen(false)}
                                     style={{ transitionDelay: isMenuOpen ? `${i * 100}ms` : "0ms" }}
                                     className={`block transform transition-all duration-500 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                                 >
                                     {link.name}
-                                </Link>
+                                </a>
                             </li>
                         ))}
                     </ul>
-                    <Link to="/kontakti" onClick={handleActionClick} className={`transition-all duration-500 delay-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
-                        <motion.div 
+                    <a href="/kontakti#contact-form-section" onClick={() => setIsMenuOpen(false)} className={`transition-all duration-500 delay-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+                        <motion.div
                             variants={pulseVariants}
                             animate="active"
                             className="bg-red-600 text-white px-10 py-4 rounded-full shadow-xl shadow-red-500/30 font-black tracking-widest text-sm"
                         >
                             ЗАПАЗИ ЧАС
                         </motion.div>
-                    </Link>
+                    </a>
                 </div>
             </nav>
         </header>

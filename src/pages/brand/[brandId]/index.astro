@@ -1,0 +1,80 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Promo from '../../../components/Promo.jsx';
+import ModelCard from '../../../components/ModelCard.astro';
+import Footer from '../../../components/Footer.astro';
+import carBrands from '../../../../public/data/carBrands.json';
+
+export function getStaticPaths() {
+  return carBrands.map((brand) => ({
+    params: { brandId: brand.id },
+    // Пропускаме модели без обработени снимки (напр. непреобразувани оригинали) —
+    // да не показваме/линкваме към празна галерия.
+    props: { brand: { ...brand, models: brand.models.filter((m) => m.images.length > 0) } },
+  }));
+}
+
+const { brand } = Astro.props;
+---
+<Layout
+  title={`Монтажи на газов инжекцион на ${brand.name} | Аутогаз Варна`}
+  description={`Разгледайте ${brand.models.length} реализирани монтажа на газов инжекцион на ${brand.name} от сервиза на Аутогаз-Варна.`}
+>
+  <main class="min-h-screen bg-slate-50">
+
+    <Promo
+      client:visible
+      title={brand.name}
+      subTitle={`Професионално инсталирани газови системи за всички модели на ${brand.name}`}
+    />
+
+    <section class="relative py-12 bg-white border-b border-slate-200 shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+          <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center p-6 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100">
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                class="max-w-full max-h-full object-contain"
+              />
+            </div>
+            <div class="text-center md:text-left">
+              <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase">
+                {brand.name}
+              </h1>
+              <div class="h-1 w-16 bg-red-600 mx-auto md:mx-0 my-3"></div>
+              <p class="text-slate-500 font-medium flex items-center justify-center md:justify-start gap-2">
+                <span class="text-red-600 font-bold">{brand.models.length}</span> реализирани проекта от Аутогаз-Варна
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="/galeriya"
+            class="group flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-red-500/40"
+          >
+            <span class="text-sm font-bold uppercase tracking-wider">← Назад към Галерия</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-16">
+      <div class="flex items-center gap-4 mb-10">
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter uppercase">
+          Модели с <span class="text-red-600">Газов Инжекцион</span>
+        </h2>
+        <div class="flex-1 h-px bg-slate-200 hidden md:block"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {brand.models.map((model) => (
+          <ModelCard model={model} brandId={brand.id} />
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

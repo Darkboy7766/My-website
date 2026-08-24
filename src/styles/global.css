@@ -1,0 +1,33 @@
+/* montserrat-regular - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/montserrat-v31-cyrillic_latin-regular.woff2') format('woff2');
+}
+/* montserrat-700 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/montserrat-v31-cyrillic_latin-700.woff2') format('woff2');
+}
+
+@import "tailwindcss";
+
+@theme {
+  --z-9999: 9999;
+  --color-brand-red: #cd2122;
+}
+
+html, body {
+  max-width: 100%;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+*{
+  font-family: 'Montserrat' !important;
+}

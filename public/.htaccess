@@ -7,12 +7,6 @@ RewriteRule ^price\.html$ /tseni-gazov-inzhekcion [R=301,L,NC]
 RewriteRule ^gallery\.html$ /galeriya [R=301,L,NC]
 RewriteRule ^contact\.html$ /kontakti [R=301,L,NC]
 
-# 2. REACT ROUTER FIX
-# Ако файлът или директорията не съществуват реално, зареди index.html
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
-
 # Активиране на Gzip компресия
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
@@ -26,12 +20,7 @@ RewriteRule . /index.html [L]
   ExpiresByType image/svg+xml "access plus 1 month"
 </IfModule>
 
-# Поддръжка на React Router (да не дава 404 при рефреш)
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
+# Astro е статичен build — всяка страница си има собствен реален HTML файл,
+# затова вече НЕ пренасочваме всичко към index.html (React Router SPA fallback).
+# Липсващ файл връща истинска 404 (виж 404.html).
+ErrorDocument 404 /404.html
