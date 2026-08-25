@@ -1,6 +1,16 @@
 RewriteEngine On
 RewriteBase /
 
+# Изключва LiteSpeed page cache (LSCache) за целия сайт.
+# Причина: LSCache кешираше старите .htaccess редиректи/canonical адреси и
+# новите правила по-долу не се отразяваха веднага след деплой (виж GSC
+# индексиращите проблеми, коригирани 2026-08-25). Сайтът е статичен Astro
+# build с mod_expires за асетите, така че губим малко от page-level кеша,
+# но печелим сигурност, че всяка промяна е видима веднага.
+<IfModule LiteSpeed>
+    CacheLookup off
+</IfModule>
+
 # 0. Консолидация на домейна – всичко към https://autogas-varna.com (без www, без http)
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.autogas-varna\.com$ [NC]
