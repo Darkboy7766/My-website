@@ -30,7 +30,7 @@ const CookieBanner = () => {
                     Този сайт използва бисквитки за подобряване на потребителското изживяване.
                     Вижте нашата{' '}
                     <a
-                        href="/PrivacyPolicy"
+                        href="/PrivacyPolicy/"
                         className="text-red-600 font-bold hover:underline underline-offset-4"
                     >
                         Политика за поверителност

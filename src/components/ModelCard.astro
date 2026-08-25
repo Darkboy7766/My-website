@@ -5,7 +5,7 @@ const { model, brandId } = Astro.props;
 const thumbnail = model.images[0]?.thumbnail;
 ---
 <a
-  href={`/brand/${brandId}/model/${model.id}`}
+  href={`/brand/${brandId}/model/${model.id}/`}
   class="group flex items-center justify-between p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(202,138,4,0.1)]"
 >
   <div class="flex items-center gap-4">

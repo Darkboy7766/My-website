@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://autogas-varna.com',
   output: 'static',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],

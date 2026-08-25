@@ -7,7 +7,7 @@ const Services = () => {
     {
       img: assets.brc_logo,
       title: "BRC Gas Equipment",
-      path: "/gazov-inzhekcion-brc",
+      path: "/gazov-inzhekcion-brc/",
       subtitle: "Италианско Качество и Иновации",
       desc: "Като официални партньори, предлагаме най-новите решения от италианския лидер. Синоним на надеждност и дългосрочна експлоатация.",
       width: "w-32",
@@ -19,7 +19,7 @@ const Services = () => {
     {
       img: assets.prins_logo,
       title: "Prins Autogassystemen",
-      path: "/gazov-inzhekcion-prins",
+      path: "/gazov-inzhekcion-prins/",
       subtitle: "Холандска Прецизност",
       desc: "Сертифициран монтаж на Prins - холандската марка, известна със своите високотехнологични решения за двигатели с директно впръскване.",
       width: "w-36",
@@ -31,7 +31,7 @@ const Services = () => {
     {
       img: assets.aeb_logo,
       title: "AEB Alternative Fuel",
-      path: "/gazov-inzhekcion-aeb",
+      path: "/gazov-inzhekcion-aeb/",
       subtitle: "Проверено Европейско Качество",
       desc: "Италиански производител с богата история. Техните системи предлагат оптимално съчетание между цена и качество за всеки автомобил.",
       width: "w-36",

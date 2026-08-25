@@ -221,7 +221,7 @@ const SmyanaGazovaButilka = () => {
           Свържете се с нас за безплатна проверка на газовата ви бутилка и точна оферта за подмяна.
         </p>
         <a
-          href="/kontakti"
+          href="/kontakti/"
           className="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-indigo-500/30 text-base"
         >
           Запазете час

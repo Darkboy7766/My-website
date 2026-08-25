@@ -55,7 +55,7 @@ const { brand, model } = Astro.props;
           </div>
 
           <a
-            href={`/brand/${brand.id}`}
+            href={`/brand/${brand.id}/`}
             class="group flex items-center gap-3 self-start md:self-center px-6 py-3 border-2 border-slate-900 text-slate-900 rounded-full hover:bg-slate-900 hover:text-white transition-all duration-300 font-bold uppercase text-xs tracking-widest"
           >
             ← Всички модели {brand.name}
@@ -75,7 +75,7 @@ const { brand, model } = Astro.props;
           <p class="text-slate-400">Свържете се с нас за консултация и оферта за Вашия автомобил.</p>
         </div>
         <a
-          href="/kontakti"
+          href="/kontakti/"
           class="px-8 py-4 bg-indigo-500 hover:bg-indigo-600 text-white font-black uppercase tracking-widest rounded-xl transition-colors shadow-lg shadow-red-600/20"
         >
           Запитване за монтаж

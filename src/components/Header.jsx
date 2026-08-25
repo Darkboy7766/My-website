@@ -5,10 +5,10 @@ import { motion } from "motion/react";
 const Header = ({ currentPath = '/' }) => {
     const navLinks = [
         { name: 'Начало', path: '/' },
-        { name: 'Цени', path: '/tseni-gazov-inzhekcion' },
-        { name: 'Галерия', path: '/galeriya' },
-        { name: 'Бутилки', path: '/smyana-gazova-butilka' },
-        { name: 'Контакти', path: '/kontakti' },
+        { name: 'Цени', path: '/tseni-gazov-inzhekcion/' },
+        { name: 'Галерия', path: '/galeriya/' },
+        { name: 'Бутилки', path: '/smyana-gazova-butilka/' },
+        { name: 'Контакти', path: '/kontakti/' },
     ];
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -125,7 +125,7 @@ const Header = ({ currentPath = '/' }) => {
                         ))}
                     </ul>
 
-                    <a href="/kontakti#contact-form-section">
+                    <a href="/kontakti/#contact-form-section">
                         <motion.div
                             variants={pulseVariants}
                             animate={isScrolled ? "active" : "stop"}
@@ -169,7 +169,7 @@ const Header = ({ currentPath = '/' }) => {
                             </li>
                         ))}
                     </ul>
-                    <a href="/kontakti#contact-form-section" onClick={() => setIsMenuOpen(false)} className={`transition-all duration-500 delay-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+                    <a href="/kontakti/#contact-form-section" onClick={() => setIsMenuOpen(false)} className={`transition-all duration-500 delay-300 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
                         <motion.div
                             variants={pulseVariants}
                             animate="active"
