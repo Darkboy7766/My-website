@@ -4,24 +4,36 @@ import Promo from '../../../../../components/Promo.jsx';
 import ImageGallery from '../../../../../components/ImageGallery.jsx';
 import Footer from '../../../../../components/Footer.astro';
 import carBrands from '../../../../../../public/data/carBrands.json';
+import { getCanonicalBase, pickCanonicalIds, isCanonicalModel } from '../../../../../utils/carModelGroups.js';
 
 export function getStaticPaths() {
-  return carBrands.flatMap((brand) =>
-    brand.models
-      // Пропускаме модели без обработени снимки (виж бележката в brand/[brandId]/index.astro).
-      .filter((model) => model.images.length > 0)
-      .map((model) => ({
-        params: { brandId: brand.id, modelId: model.id },
-        props: { brand, model },
-      }))
-  );
+  return carBrands.flatMap((brand) => {
+    // Пропускаме модели без обработени снимки (виж бележката в brand/[brandId]/index.astro).
+    const modelsWithImages = brand.models.filter((model) => model.images.length > 0);
+    // Няколко модел-папки често са отделни монтажи на един и същ автомобил
+    // (Honda-CRV-1 ... Honda-CRV-12) — групираме ги, за да индексираме само по 1 на модел.
+    const canonicalOf = pickCanonicalIds(modelsWithImages);
+
+    return modelsWithImages.map((model) => ({
+      params: { brandId: brand.id, modelId: model.id },
+      props: {
+        brand,
+        model,
+        canonicalModelId: canonicalOf.get(getCanonicalBase(model.id)),
+        isCanonical: isCanonicalModel(model.id, canonicalOf),
+      },
+    }));
+  });
 }
 
-const { brand, model } = Astro.props;
+const { brand, model, canonicalModelId, isCanonical } = Astro.props;
+const canonicalUrl = new URL(`/brand/${brand.id}/model/${canonicalModelId}/`, Astro.site);
 ---
 <Layout
   title={`${brand.name} ${model.name} — монтаж на газов инжекцион | Аутогаз Варна`}
   description={`Снимки от монтаж на газов инжекцион на ${brand.name} ${model.name}. ${model.images.length} снимки от реализиран проект на Аутогаз-Варна.`}
+  canonical={canonicalUrl}
+  robots={isCanonical ? 'index, follow' : 'noindex, follow'}
 >
   <main class="min-h-screen bg-slate-50">
 
