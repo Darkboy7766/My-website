@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import partytown from '@astrojs/partytown';
 import tailwindcss from '@tailwindcss/vite';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -21,6 +22,11 @@ export default defineConfig({
     react(),
     sitemap({
       filter: (page) => !noIndexModelPaths.has(new URL(page).pathname),
+    }),
+    partytown({
+      config: {
+        forward: ['dataLayer.push', 'gtag'],
+      },
     }),
   ],
   vite: {
