@@ -4,7 +4,7 @@ import Promo from '../../../../../components/Promo.jsx';
 import ImageGallery from '../../../../../components/ImageGallery.jsx';
 import Footer from '../../../../../components/Footer.astro';
 import carBrands from '../../../../../../public/data/carBrands.json';
-import { getCanonicalBase, pickCanonicalIds, isCanonicalModel, mergeGroupImages } from '../../../../../utils/carModelGroups.js';
+import { getCanonicalBase, pickCanonicalIds, isCanonicalModel } from '../../../../../utils/carModelGroups.js';
 
 export function getStaticPaths() {
   return carBrands.flatMap((brand) => {
@@ -13,32 +13,25 @@ export function getStaticPaths() {
     // Няколко модел-папки често са отделни монтажи на един и същ автомобил
     // (Honda-CRV-1 ... Honda-CRV-12) — групираме ги, за да индексираме само по 1 на модел.
     const canonicalOf = pickCanonicalIds(modelsWithImages);
-    // Каноничната страница показва снимките от ЦЯЛАТА група (всички монтажи
-    // на модела), не само своите — за да не изчезват визуално за посетителите.
-    const mergedImagesOf = mergeGroupImages(modelsWithImages, canonicalOf);
 
-    return modelsWithImages.map((model) => {
-      const isCanonical = isCanonicalModel(model.id, canonicalOf);
-      return {
-        params: { brandId: brand.id, modelId: model.id },
-        props: {
-          brand,
-          model,
-          canonicalModelId: canonicalOf.get(getCanonicalBase(model.id)),
-          isCanonical,
-          displayImages: isCanonical ? mergedImagesOf.get(model.id) : model.images,
-        },
-      };
-    });
+    return modelsWithImages.map((model) => ({
+      params: { brandId: brand.id, modelId: model.id },
+      props: {
+        brand,
+        model,
+        canonicalModelId: canonicalOf.get(getCanonicalBase(model.id)),
+        isCanonical: isCanonicalModel(model.id, canonicalOf),
+      },
+    }));
   });
 }
 
-const { brand, model, canonicalModelId, isCanonical, displayImages } = Astro.props;
+const { brand, model, canonicalModelId, isCanonical } = Astro.props;
 const canonicalUrl = new URL(`/brand/${brand.id}/model/${canonicalModelId}/`, Astro.site);
 ---
 <Layout
   title={`${brand.name} ${model.name} — монтаж на газов инжекцион | Аутогаз Варна`}
-  description={`Снимки от монтаж на газов инжекцион на ${brand.name} ${model.name}. ${displayImages.length} снимки от реализиран проект на Аутогаз-Варна.`}
+  description={`Снимки от монтаж на газов инжекцион на ${brand.name} ${model.name}. ${model.images.length} снимки от реализиран проект на Аутогаз-Варна.`}
   canonical={canonicalUrl}
   robots={isCanonical ? 'index, follow' : 'noindex, follow'}
 >
@@ -63,7 +56,7 @@ const canonicalUrl = new URL(`/brand/${brand.id}/model/${canonicalModelId}/`, As
                 {brand.name}
               </span>
               <div class="flex items-center gap-2 text-slate-400 text-sm font-medium uppercase tracking-widest">
-                <span>{displayImages.length} Снимки</span>
+                <span>{model.images.length} Снимки</span>
               </div>
             </div>
 
@@ -85,7 +78,7 @@ const canonicalUrl = new URL(`/brand/${brand.id}/model/${canonicalModelId}/`, As
 
     <section class="container mx-auto px-4 py-16">
       <div class="bg-white p-4 md:p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-100">
-        <ImageGallery client:load images={displayImages} modelName={model.name} />
+        <ImageGallery client:load images={model.images} modelName={model.name} />
       </div>
 
       <div class="mt-12 p-8 bg-slate-800 rounded-3xl text-white flex flex-col md:flex-row items-center justify-between gap-6">
