@@ -33,7 +33,8 @@ const {
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="preload" as="image" href="/assets/hero-bg.webp" type="image/webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/hero-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 767px)" />
+  <link rel="preload" as="image" href="/assets/hero-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />
   <link rel="preload" as="font" href="/fonts/montserrat-v31-cyrillic_latin-regular.woff2" type="font/woff2" crossorigin />
   <link rel="preload" as="font" href="/fonts/montserrat-v31-cyrillic_latin-700.woff2" type="font/woff2" crossorigin />
 
@@ -50,8 +51,8 @@ const {
   ))}
 </head>
 <body>
-  <Header currentPath={Astro.url.pathname} client:load />
+  <Header currentPath={Astro.url.pathname} client:idle />
   <slot />
-  <CookieBanner client:load />
+  <CookieBanner client:idle />
 </body>
 </html>

@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 const Promo = ({ title, subTitle }) => {
   return (
     <div className="relative overflow-hidden">
-      <section className="relative flex flex-col items-center justify-center mx-auto w-full text-center py-24 md:py-32 bg-[url('/assets/hero-bg.webp')] bg-cover bg-top bg-no-repeat">
+      <section className="relative flex flex-col items-center justify-center mx-auto w-full text-center py-24 md:py-32 bg-[url('/assets/hero-bg-mobile.webp')] md:bg-[url('/assets/hero-bg.webp')] bg-cover bg-top bg-no-repeat">
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
 
         <motion.div

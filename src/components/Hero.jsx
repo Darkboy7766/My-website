@@ -3,7 +3,7 @@ import { MoveRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className='relative flex flex-col items-start justify-center px-5 md:px-16 lg:px-24 xl:px-32 text-white bg-no-repeat bg-cover bg-center h-screen overflow-hidden' style={{ backgroundImage: 'url(/assets/hero-bg.webp)' }}>
+    <div className="relative flex flex-col items-start justify-center px-5 md:px-16 lg:px-24 xl:px-32 text-white bg-no-repeat bg-cover bg-center h-screen overflow-hidden bg-[url('/assets/hero-bg-mobile.webp')] md:bg-[url('/assets/hero-bg.webp')]">
 
       <div className="absolute inset-0 bg-black/40 z-0"></div>
 
