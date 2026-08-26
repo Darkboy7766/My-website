@@ -6,7 +6,7 @@
   "scripts": {
     "generate-cars": "node generate-cars.js",
     "dev": "npm run generate-cars && astro dev",
-    "build": "npm run generate-cars && astro build",
+    "build": "npm run generate-cars && astro build && node scripts/inline-critical-css.mjs",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -23,5 +23,8 @@
     "react-dom": "^19.2.0",
     "sharp": "^0.35.3",
     "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "beasties": "^0.4.3"
   }
 }
