@@ -47,8 +47,8 @@ const About = () => {
               className="w-full h-auto object-cover rounded-2xl"
               src={assets.banner}
               alt="Сервиз за монтаж на газов инжекцион - Аутогаз Варна"
-              width={855}
-              height={512}
+              width={623}
+              height={373}
               loading="lazy"
             />
           </div>
