@@ -37,28 +37,6 @@ export function isCanonicalModel(modelId, canonicalOf) {
   return canonicalOf.get(getCanonicalBase(modelId)) === modelId;
 }
 
-// Map<canonicalModelId, снимки от ВСИЧКИ варианти в групата> — така
-// каноничната страница показва всички реализирани монтажи на модела, а не
-// само своите собствени снимки, докато non-canonical страниците продължават
-// да излизат noindex за търсачките.
-export function mergeGroupImages(models, canonicalOf) {
-  const groups = new Map();
-  for (const model of models) {
-    const base = getCanonicalBase(model.id);
-    if (!groups.has(base)) groups.set(base, []);
-    groups.get(base).push(model);
-  }
-
-  const imagesByCanonicalId = new Map();
-  for (const [base, groupModels] of groups) {
-    const sorted = [...groupModels].sort(
-      (a, b) => suffixRank(a.id, base) - suffixRank(b.id, base)
-    );
-    imagesByCanonicalId.set(canonicalOf.get(base), sorted.flatMap((m) => m.images));
-  }
-  return imagesByCanonicalId;
-}
-
 // Пътища (без домейн) на всички НЕ-канонични model-страници — за изключване от sitemap.
 export function getNonCanonicalModelPaths(carBrands) {
   const paths = [];

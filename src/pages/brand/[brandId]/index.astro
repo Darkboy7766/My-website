@@ -4,32 +4,14 @@ import Promo from '../../../components/Promo.jsx';
 import ModelCard from '../../../components/ModelCard.astro';
 import Footer from '../../../components/Footer.astro';
 import carBrands from '../../../../public/data/carBrands.json';
-import { pickCanonicalIds, isCanonicalModel, mergeGroupImages } from '../../../utils/carModelGroups.js';
 
 export function getStaticPaths() {
-  return carBrands.map((brand) => {
+  return carBrands.map((brand) => ({
+    params: { brandId: brand.id },
     // Пропускаме модели без обработени снимки (напр. непреобразувани оригинали) —
     // да не показваме/линкваме към празна галерия.
-    const modelsWithImages = brand.models.filter((m) => m.images.length > 0);
-    // Показваме и линкваме само каноничните model-страници — дубликатите
-    // (повторни фото-папки на един и същ монтаж) са noindex и извън sitemap-а
-    // (виж carModelGroups.js), затова не бива да ги линкваме от индексирана
-    // страница: харчи crawl budget/link equity и подвежда потребителя с
-    // почти еднакви карти за едно и също превозно средство.
-    const canonicalOf = pickCanonicalIds(modelsWithImages);
-    // Каноничната карта показва броя снимки от ЦЯЛАТА група (всички монтажи
-    // на модела) — те всички се виждат на каноничната страница, виж
-    // mergeGroupImages в brand/[brandId]/model/[modelId]/index.astro.
-    const mergedImagesOf = mergeGroupImages(modelsWithImages, canonicalOf);
-    const canonicalModels = modelsWithImages
-      .filter((m) => isCanonicalModel(m.id, canonicalOf))
-      .map((m) => ({ ...m, images: mergedImagesOf.get(m.id) }));
-
-    return {
-      params: { brandId: brand.id },
-      props: { brand: { ...brand, models: canonicalModels } },
-    };
-  });
+    props: { brand: { ...brand, models: brand.models.filter((m) => m.images.length > 0) } },
+  }));
 }
 
 const { brand } = Astro.props;
