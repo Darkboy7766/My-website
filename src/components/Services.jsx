@@ -67,7 +67,7 @@ const Services = () => {
             <div className="h-24 flex items-start mb-8">
               <motion.img
                 whileHover={{ scale: 1.1 }}
-                className={`${brand.width} grayscale group-hover:grayscale-0 transition-all duration-700 object-contain drop-shadow-sm`}
+                className={`${brand.width} md:grayscale md:group-hover:grayscale-0 transition-all duration-700 object-contain drop-shadow-sm`}
                 src={brand.img}
                 alt={brand.title}
                 width={brand.imgWidth}
