@@ -3,10 +3,28 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.jsx';
 import Footer from '../components/Footer.astro';
 import { assets } from '../assets/assets';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Монтаж на Prins газов инжекцион',
+    serviceType: 'Монтаж на газова уредба',
+    brand: 'Prins',
+    provider: {
+      '@type': 'AutoRepair',
+      name: 'Аутогаз Варна',
+      address: { '@type': 'PostalAddress', addressLocality: 'Варна', addressCountry: 'BG' },
+    },
+    description: 'Монтаж на Prins газови инжекциони във Варна. Холандска премиум технология за двигатели с директно впръскване.',
+    areaServed: 'Варна и региона',
+  },
+];
 ---
 <Layout
   title="Prins Газов Инжекцион Варна | Официален Сервиз"
   description="Монтаж на Prins газови инжекциони във Варна. Холандска премиум технология за двигатели с директно впръскване."
+  jsonLd={jsonLd}
 >
   <main class="min-h-screen bg-white pt-24 pb-16 px-5">
     <Title client:visible title="Газов инжекцион PRINS" subTitle="" />

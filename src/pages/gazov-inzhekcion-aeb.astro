@@ -3,10 +3,28 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.jsx';
 import Footer from '../components/Footer.astro';
 import { assets } from '../assets/assets';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Монтаж на AEB газов инжекцион',
+    serviceType: 'Монтаж на газова уредба',
+    brand: 'AEB',
+    provider: {
+      '@type': 'AutoRepair',
+      name: 'Аутогаз Варна',
+      address: { '@type': 'PostalAddress', addressLocality: 'Варна', addressCountry: 'BG' },
+    },
+    description: 'Монтаж на AEB газови инжекциони във Варна. Италианска електроника с добра цена и надеждна универсалност.',
+    areaServed: 'Варна и региона',
+  },
+];
 ---
 <Layout
   title="AEB Газов Инжекцион Варна | Официален Сервиз"
   description="Монтаж на AEB газови инжекциони във Варна. Италианска електроника с добра цена и надеждна универсалност."
+  jsonLd={jsonLd}
 >
   <main class="min-h-screen bg-white pt-24 pb-16 px-5">
     <Title client:visible title="Газов инжекцион AEB" subTitle="" />
