@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Promo from '../components/Promo.jsx';
+import Footer from '../components/Footer.astro';
+import { assets } from '../assets/assets';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'За Аутогаз Варна',
+    description: 'История, официални партньорства и стандарти за качество на Аутогаз-Варна ООД - сервиз за монтаж на газови уредби във Варна от 2005 година.',
+    about: { '@id': 'https://autogas-varna.com' },
+  },
+];
+---
+<Layout
+  title="За Нас | Аутогаз Варна"
+  description="Аутогаз-Варна ООД - официален партньор на BRC, Prins и AEB. Монтираме и обслужваме газови уредби във Варна от 2005 година, на настоящия адрес от 2010 година."
+  jsonLd={jsonLd}
+>
+  <main class="min-h-screen bg-white pt-24 pb-16">
+    <Promo
+      client:visible
+      title="За Аутогаз Варна"
+      subTitle="Доверен партньор за монтаж и сервиз на газови уредби във Варна от 2005 година."
+    />
+
+    <div class="max-w-6xl mx-auto px-5">
+      <!-- История -->
+      <section class="grid md:grid-cols-2 gap-12 items-center py-16">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-6">Нашата история</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            <strong>Аутогаз-Варна ООД</strong> се занимава с монтаж, диагностика и сервиз на автомобилни газови уредби от <strong>2005 година</strong>. От <strong>2010 година</strong> приемаме клиенти на настоящия адрес — бул. „Христо Смирненски", до OMV, град Варна.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            През годините сме монтирали газови инжекциони на стотици автомобили от всички марки — от класически бензинови двигатели до съвременни системи с директно впръскване (GDI, TSI, FSI). Всеки монтаж се извършва по европейските стандарти <strong>ECE R67 / R115</strong>.
+          </p>
+        </div>
+        <img
+          src={assets.banner}
+          alt="Сервиз Аутогаз Варна - монтаж на газов инжекцион"
+          class="w-full h-auto object-cover rounded-3xl shadow-2xl border-4 border-white"
+          width={623}
+          height={373}
+          loading="lazy"
+        />
+      </section>
+
+      <!-- Статистики -->
+      <section class="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-slate-100">
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-black text-indigo-600">2005</p>
+          <p class="text-sm text-slate-500 font-medium mt-1">Година на основаване</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-black text-indigo-600">4.6★</p>
+          <p class="text-sm text-slate-500 font-medium mt-1">Рейтинг в Google (68 отзива)</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-black text-indigo-600">3</p>
+          <p class="text-sm text-slate-500 font-medium mt-1">Официални партньорства</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-black text-indigo-600">100%</p>
+          <p class="text-sm text-slate-500 font-medium mt-1">Гаранция за качество</p>
+        </div>
+      </section>
+
+      <!-- Официални партньорства -->
+      <section class="py-16">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-10 text-center">Официални партньорства</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <a href="/gazov-inzhekcion-brc/" class="group p-8 rounded-4xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors text-center">
+            <img src={assets.brc_logo} alt="BRC лого" class="h-16 mx-auto mb-6 object-contain" loading="lazy" />
+            <p class="text-slate-600">Официален сервиз на BRC - италианско качество и затворена система за перфектна съвместимост.</p>
+          </a>
+          <a href="/gazov-inzhekcion-prins/" class="group p-8 rounded-4xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors text-center">
+            <img src={assets.prins_logo} alt="Prins лого" class="h-16 mx-auto mb-6 object-contain" loading="lazy" />
+            <p class="text-slate-600">Официален сервиз на Prins - холандска премиум технология за двигатели с директно впръскване.</p>
+          </a>
+          <a href="/gazov-inzhekcion-aeb/" class="group p-8 rounded-4xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors text-center">
+            <img src={assets.aeb_logo} alt="AEB лого" class="h-16 mx-auto mb-6 object-contain" loading="lazy" />
+            <p class="text-slate-600">Официален сервиз на AEB - италианска електроника с отлично съотношение цена/качество.</p>
+          </a>
+        </div>
+        <p class="text-center text-slate-500 mt-8">Работим и със системи Romano и Lovato при необходимост от конкретна съвместимост.</p>
+      </section>
+
+      <!-- Мисия -->
+      <section class="py-8 pb-16">
+        <div class="bg-indigo-600 p-10 rounded-4xl text-white shadow-xl shadow-indigo-200 text-center max-w-3xl mx-auto">
+          <p class="text-xl italic leading-relaxed">
+            "Нашата мисия е да предоставим сигурност и ефективност, които се изплащат с всеки изминат километър."
+          </p>
+        </div>
+      </section>
+
+      <div class="text-center pb-8">
+        <a href="/kontakti/" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-all shadow-lg">
+          Свържете се с нас
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

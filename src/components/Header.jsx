@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 const Header = ({ currentPath = '/' }) => {
     const navLinks = [
         { name: 'Начало', path: '/' },
+        { name: 'За нас', path: '/za-nas/' },
         { name: 'Цени', path: '/tseni-gazov-inzhekcion/' },
         { name: 'Галерия', path: '/galeriya/' },
         { name: 'Бутилки', path: '/smyana-gazova-butilka/' },

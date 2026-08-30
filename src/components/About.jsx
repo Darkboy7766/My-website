@@ -81,6 +81,9 @@ const About = () => {
             <p className="text-lg text-slate-600 leading-relaxed">
               С над <span className="text-indigo-600 font-bold">20 години професионален опит</span>, ние не просто монтираме уредби – ние прецизно настройваме Вашия автомобил за оптимална работа и максимална икономия.
             </p>
+            <a href="/za-nas/" className="inline-block text-indigo-600 font-bold hover:underline">
+              Прочетете повече за нас →
+            </a>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
